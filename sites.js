@@ -108,25 +108,25 @@ map.on('load', function (e) {
     }
   });
 
-  // When a click event occurs on a feature in the places layer, open the content
+  // When user clicks on a feature in the places layer, open the content
   map.on('click', 'murals', function(e) {
     $("#sidebar").css("display","block");
     $("#content").css("display","flex");
     $("#overlay").css("display","block");
     $("#close").css("display","block");
 
-    // Implement close and return to map functionality
+    // Fill content panels with prebuilt content
+    let siteId = e.features[0].properties.id;
+    $("#sidebar").html(siteContent[siteId]);
+    $("#content").html(siteImage[siteId]);
+
+    // When user clicks on close div, close the content
     $("#close").click(function() {
       $("#sidebar").css("display","none");
       $("#content").css("display","none");
       $("#overlay").css("display","none");
       $("#close").css("display","none");
     });
-
-    //
-    let siteId = e.features[0].properties.id;
-    $("#sidebar").html(siteContent[siteId]);
-    $("#content").html(siteImage[siteId]);
 
 
 //    var coordinates = e.features[0].geometry.coordinates.slice();
