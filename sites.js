@@ -1,15 +1,18 @@
 "use strict";
 
+// Name of the top-level folder which contains the subfolders of content for each site
+var contentFolder = 'content';
+
 // Mapbox configuration
-// This is Melisa's map
+// This is Melisa's map -- probably CHANGEME
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWVsaXNhcGF6IiwiYSI6ImNrOXdqdWRtdDA5aTkzZ3VoYXhramNyZjgifQ.V3kNFUghK_8qlcj5ac_WPQ';
 
 var map = new mapboxgl.Map({
     container: 'mapcontainer',
     style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
-    center: [-3.164, 55.971], // starting position [lng, lat]
-    zoom: 13, // starting zoom
+    center: [-3.164, 55.968], // starting position [lng, lat]
+    zoom: 14, // starting zoom
 });
 
 // This will be an array of jQuery objects with the sidebar content for each site
@@ -30,6 +33,18 @@ var muralData = {
         'description' :
             '<p>Kirsty Whiten’s Wronger Rites mural was commissioned as part of The Mural Project for the LeithLate15 festival, with associated temporary public art installations on Leith Walk opposite the former Edinburgh Printmakers and an exhibition at the former Whitespace gallery. In 2017 two thirds of the mural were sadly demolished, though the horse figure remains intact.</p><p>Artist website: <a href="https://www.kirstywhiten.com/">www.kirstywhiten.com</a></p>',
         'icon' : 'museum',
+        'audio' : [
+          {
+            'file' : 'CameronFoster.mp3',
+            'transcript' : 'CameronFoster.pdf',
+            'label' : 'Cameron Foster Audio Guide',
+          },
+          {
+            'file' : 'KirstyWhiten.mp3',
+            'transcript' : 'KirstyWhiten.pdf',
+            'label' : 'Kirsty Whiten on Wronger Rites',
+          },
+        ],
       },
       'geometry' : {
         'type' : 'Point',
@@ -45,6 +60,13 @@ var muralData = {
         'description' :
             '<p>This mural was painted as a celebration of the history of both Leith and the Leith Dockers Club, and was unveiled by the author Irvine Welsh in early 2014. Although on private grounds, the mural is publicly available to view whenever the Leith Dockers Club is open.</p>',
         'icon' : 'harbor',
+        'audio' : [
+          {
+            'file' : 'CameronFoster.mp3',
+            'transcript' : 'CameronFoster.pdf',
+            'label' : 'Cameron Foster Audio Guide',
+          },
+        ]
       },
       'geometry' : {
         'type' : 'Point',
@@ -60,6 +82,29 @@ var muralData = {
         'description' :
             '<p>The Leith Aquatic was the first mural fundraised for and commissioned by LeithLate, as part of The Mural Project in 2013. It was produced by Blameless Collective through local community consultation and was also the first large-scale mural to be installed in Leith for almost three decades, kickstarting a new association with public art in the area. The mural launch in July 2013 included a street party for local residents with speeches, DJs and free daal courtesy of Sikh Sanjog.</p>',
         'icon' : 'aquarium',
+        'audio' : [
+          {
+            'file' : 'CameronFoster.mp3',
+            'transcript' : 'CameronFoster.pdf',
+            'label' : 'Cameron Foster Audio Guide',
+          },
+          {
+            'file' : 'RabiyaChoudhry.mp3',
+            'transcript' : 'RabiyaChoudhry.pdf',
+            'label' : 'Rabiya Choudhry on Leith Aquatic Mural',
+          },
+          {
+            'file' : 'RichieCumming.mp3',
+            'transcript' : 'RichieCumming.pdf',
+            'label' : 'Richie Cumming on Leith Aquatic Mural',
+          },
+          {
+            'file' : 'FraserGray.mp3',
+            'transcript' : 'FraserGray.pdf',
+            'label' : 'Fraser Gray on Leith Aquatic Mural',
+          },
+
+        ],
       },
       'geometry' : {
         'type' : 'Point',
@@ -79,11 +124,37 @@ muralData.features.forEach(function(mural, index){
   //let siteId = "site-".concat(index);
 
   // Build the HTML raw for jQuery performance reasons
-  siteHTML = "<div class='heading'>" + mural.properties.name + "</div>";
-  siteHTML += "<div class='artist'>" + mural.properties.artist + "</div>";
-  siteHTML += "<div class='description'>" + mural.properties.description + "</div>";
-  //siteHTML += "<div class='featureimage'><img src='content/" + mural.properties.folder +
-  //    "/feature_thumbnail.jpg'></div>";
+  siteHTML = "<div class='heading'>" + mural.properties.name + "</div>\n";
+  siteHTML += "<div id='artist'>" + mural.properties.artist + "</div>\n";
+  siteHTML += "<div id='description'>" + mural.properties.description + "</div>\n";
+
+  // There can be a variable number of audio clips
+  siteHTML += "<div id='audio'>";
+  console.log(mural.properties.audio);
+  if (mural.properties.audio) {
+    mural.properties.audio.forEach(function(clip) {
+      siteHTML += "<div class='audioclip'>\n";
+//      siteHTML += "<a href='" + contentFolder + "/" + mural.properties.folder + "/";
+//      siteHTML += clip.file;
+//      siteHTML += "'>";
+      siteHTML += clip.label;
+//      siteHTML += "</a>";
+      // Use native player
+      siteHTML += "<div class='audioplayer'><audio controls>";
+      siteHTML += "<source src='";
+      siteHTML += contentFolder + "/" + mural.properties.folder + "/";
+      siteHTML += clip.file;
+      siteHTML += "' type='audio/mpeg'>Your browser does not support the audio element.</audio>";
+      siteHTML += "</div>\n";
+      // Each clip should have a transcript in PDF
+      siteHTML += "<div class='transcript'>";
+      siteHTML += "[<a href='" + contentFolder + "/" + mural.properties.folder + "/";
+      siteHTML += clip.transcript;
+      siteHTML += "'>transcript</a>]</div>\n";
+      siteHTML += "</div>\n";
+    })
+  };
+  siteHTML += "</div>\n";
 
   siteContent[index] = siteHTML;
   siteImage[index] = "<img src='content/" + mural.properties.folder + "/feature.jpg'>";

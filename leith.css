@@ -80,10 +80,14 @@ body {
 /* Typography */
 /* CHANGEME need responsive adjustments here */
 
-.heading {
+#heading {
   font-weight: bold;
 }
 
-.artist {
+#artist {
   font-style: italic;
+}
+
+.audioclip {
+  margin-bottom: 2%;
 }
