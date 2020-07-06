@@ -124,7 +124,7 @@ muralData.features.forEach(function(mural, index){
   //let siteId = "site-".concat(index);
 
   // Build the HTML raw for jQuery performance reasons
-  siteHTML = "<div class='heading'>" + mural.properties.name + "</div>\n";
+  siteHTML = "<div id='sitename'>" + mural.properties.name + "</div>\n";
   siteHTML += "<div id='artist'>" + mural.properties.artist + "</div>\n";
   siteHTML += "<div id='description'>" + mural.properties.description + "</div>\n";
 
