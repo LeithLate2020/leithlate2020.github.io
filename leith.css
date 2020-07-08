@@ -88,6 +88,10 @@ body {
   font-style: italic;
 }
 
+audio {
+  width: 100%;
+}
+
 .audioclip {
   margin-bottom: 2%;
 }
