@@ -31,6 +31,7 @@ var siteImage = [];
 muralData.features.forEach(function(mural, index){
   // Build up complete sidebar content in siteHTML
   let siteHTML;
+  let contentPath = contentFolder + "/" + mural.properties.folder + "/";
 
   // Assign an ID to each mural
   mural.properties.id = index;
@@ -45,22 +46,15 @@ muralData.features.forEach(function(mural, index){
   if (mural.properties.audio) {
     mural.properties.audio.forEach(function(clip) {
       siteHTML += "<div class='audioclip'>\n";
-//      siteHTML += "<a href='" + contentFolder + "/" + mural.properties.folder + "/";
-//      siteHTML += clip.file;
-//      siteHTML += "'>";
       siteHTML += clip.label;
-//      siteHTML += "</a>";
       // Use native player
       siteHTML += "<div class='audioplayer'><audio controls>";
-      siteHTML += "<source src='";
-      siteHTML += contentFolder + "/" + mural.properties.folder + "/";
-      siteHTML += clip.file;
+      siteHTML += "<source src='" + contentPath + clip.file;
       siteHTML += "' type='audio/mpeg'>Your browser does not support the audio element.</audio>";
       siteHTML += "</div>\n";
       // Each clip should have a transcript in PDF
       siteHTML += "<div class='transcript'>";
-      siteHTML += "[<a href='" + contentFolder + "/" + mural.properties.folder + "/";
-      siteHTML += clip.transcript;
+      siteHTML += "[<a href='" + contentPath + clip.transcript;
       siteHTML += "'>transcript</a>]</div>\n";
       siteHTML += "</div>\n";
     })
@@ -68,7 +62,7 @@ muralData.features.forEach(function(mural, index){
   siteHTML += "</div>\n";
 
   siteContent[index] = siteHTML;
-  siteImage[index] = "<img src='content/" + mural.properties.folder + "/feature.jpg'>";
+  siteImage[index] = "<img src='" + contentPath + "feature.jpg'>";
 
 });
 
