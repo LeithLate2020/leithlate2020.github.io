@@ -1,12 +1,15 @@
 "use strict";
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Name of the top-level folder which contains the subfolders of content for each site
 var contentFolder = 'content';
+
+// Name of the top-level file which contains the GeoJSON data for the murals
 var muralDataFile = 'murals.json';
 
 // Mapbox configuration
 // This is Melisa's map -- probably CHANGEME
-
 mapboxgl.accessToken = 'pk.eyJ1IjoibWVsaXNhcGF6IiwiYSI6ImNrOXdqdWRtdDA5aTkzZ3VoYXhramNyZjgifQ.V3kNFUghK_8qlcj5ac_WPQ';
 
 var map = new mapboxgl.Map({
@@ -16,17 +19,13 @@ var map = new mapboxgl.Map({
     zoom: 14, // starting zoom
 });
 
-// This will be an array of jQuery objects with the sidebar content for each site
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// An array of jQuery objects with the sidebar content for each site
 var siteContent = [];
-// This will be an array of jQuery objects with the initial image content for each site
+// An array of jQuery objects with the initial image content for each site
 var siteImage = [];
-
-// This is the raw GeoJSON
-//var loadMurals = $.getJSON(muralDataFile);
-//muralData = JSON.parse(loadMurals);
-//console.log(muralData);
-
-//muralData = data;
 
 // Prepare content for each item on the map
 muralData.features.forEach(function(mural, index){
@@ -35,7 +34,6 @@ muralData.features.forEach(function(mural, index){
 
   // Assign an ID to each mural
   mural.properties.id = index;
-  //let siteId = "site-".concat(index);
 
   // Build the HTML raw for jQuery performance reasons
   siteHTML = "<div id='sitename'>" + mural.properties.name + "</div>\n";
@@ -44,7 +42,6 @@ muralData.features.forEach(function(mural, index){
 
   // There can be a variable number of audio clips
   siteHTML += "<div id='audio'>";
-  console.log(mural.properties.audio);
   if (mural.properties.audio) {
     mural.properties.audio.forEach(function(clip) {
       siteHTML += "<div class='audioclip'>\n";
