@@ -80,7 +80,11 @@ map.on('load', function (e) {
     },
     'layout': {
       'icon-image': '{icon}-15',
-      'icon-allow-overlap': true,
+      'icon-allow-overlap': false,
+      'text-field': '{name}',
+      'text-size' : 14,
+      'text-anchor': 'top',
+      'text-offset': [0,0.7],
     }
   });
 
