@@ -31,6 +31,7 @@ var siteImage = [];
 muralData.features.forEach(function(mural, index){
   // Build up complete sidebar content in siteHTML
   let siteHTML;
+  let imageHTML;
   let contentPath = contentFolder + "/" + mural.properties.folder + "/";
 
   // Assign an ID to each mural
@@ -61,8 +62,13 @@ muralData.features.forEach(function(mural, index){
   };
   siteHTML += "</div>\n";
 
+  imageHTML = "<a href='" + contentPath + "fullsize.jpg' target='_blank'>";
+  imageHTML += "<img src='" + contentPath + "feature.jpg' alt='";
+  imageHTML += "Image of " + mural.properties.name;
+  imageHTML += "'></a>";
+
   siteContent[index] = siteHTML;
-  siteImage[index] = "<img src='" + contentPath + "feature.jpg'>";
+  siteImage[index] = imageHTML;
 
 });
 
