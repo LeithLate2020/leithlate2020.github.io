@@ -50,6 +50,9 @@ muralData.features.forEach(function(mural, index){
   // Build the HTML raw for jQuery performance reasons
   siteHTML = "<div id='sitename'>" + mural.properties.name + "</div>\n";
   siteHTML += "<div id='artist'>" + mural.properties.artist + "</div>\n";
+  if (mural.properties.year) {
+    siteHTML += "<div id='year'>" + mural.properties.year + "</div>\n";
+  }
   siteHTML += "<div id='description'>" + mural.properties.description + "</div>\n";
 
   // There can be a variable number of audio clips
