@@ -9,8 +9,13 @@ var contentFolder = 'content';
 var muralDataFile = 'murals.json';
 
 // Mapbox configuration
+
 // This is Melisa's map -- probably CHANGEME
-mapboxgl.accessToken = 'pk.eyJ1IjoibWVsaXNhcGF6IiwiYSI6ImNrOXdqdWRtdDA5aTkzZ3VoYXhramNyZjgifQ.V3kNFUghK_8qlcj5ac_WPQ';
+// mapboxgl.accessToken = 'pk.eyJ1IjoibWVsaXNhcGF6IiwiYSI6ImNrOXdqdWRtdDA5aTkzZ3VoYXhramNyZjgifQ.V3kNFUghK_8qlcj5ac_WPQ';
+
+// This is the map from leithlatetours@gmail.com
+mapboxgl.accessToken =
+'pk.eyJ1IjoibGVpdGhsYXRlIiwiYSI6ImNrY20xZGY0NzJheDUyem54M3h4c2h6MncifQ.8T4JjPlNUOfwVvpXVTyVIw';
 
 var map = new mapboxgl.Map({
     container: 'mapcontainer',
