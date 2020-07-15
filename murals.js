@@ -133,5 +133,71 @@ var muralData = {
         "coordinates" : [-3.171943195,55.97456844],
       }
     },
+    {
+      "type" : "Feature",
+      "properties" : {
+        "name" : "Leith History Mural",
+        "folder" : "LeithHistory",
+        "artist" : "Tim Chalk and Paul Grime",
+        "description" :
+            "<p>BLURB TO FOLLOW. TRANSCRIPT MISSING.</p>",
+        "icon" : "museum",
+        "audio" : [
+          {
+            "file" : "CameronFoster.mp3",
+            "transcript" : "CameronFoster.pdf",
+            "label" : "Cameron Foster Audio Guide",
+          },
+        ]
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.179364314,55.97573747],
+      }
+    },
+    {
+      "type" : "Feature",
+      "properties" : {
+        "name" : "Too Much Fun Club Mural",
+        "folder" : "TooMuchFun",
+        "artist" : "The Too Much Fun Club",
+        "description" :
+            "<p>BLURB TO FOLLOW. NO AUDIO YET. TRANSCRIPT MISSING.</p>",
+        "icon" : "museum",
+        "audio" : [
+          {
+            "file" : "CameronFoster.mp3",
+            "transcript" : "CameronFoster.pdf",
+            "label" : "Cameron Foster Audio Guide",
+          },
+        ]
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.179904,55.967603],
+      }
+    },
+    {
+      "type" : "Feature",
+      "properties" : {
+        "name" : "The Seven Deadly Sins",
+        "folder" : "SevenDeadly",
+        "artist" : "Guido van Helten",
+        "description" :
+            "<p>BLURB TO FOLLOW. NO AUDIO YET. TRANSCRIPT MISSING.</p>",
+        "icon" : "museum",
+        "audio" : [
+          {
+            "file" : "CameronFoster.mp3",
+            "transcript" : "CameronFoster.pdf",
+            "label" : "Cameron Foster Audio Guide",
+          },
+        ]
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.175854,55.965529],
+      }
+    },
   ]
 }
