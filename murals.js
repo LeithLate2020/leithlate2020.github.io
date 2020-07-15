@@ -31,23 +31,23 @@ var muralData = {
     {
       "type" : "Feature",
       "properties" : {
-        "name" : "Leith Dockers Club Mural",
-        "folder" : "DockersClub",
-        "artist" : "Tom Ewing",
+        "name" : "Untitled Mural",
+        "folder" : "UntitledElph",
+        "artist" : "Elph",
         "description" :
-            "<p>This mural was painted as a celebration of the history of both Leith and the Leith Dockers Club, and was unveiled by the author Irvine Welsh in early 2014. Although on private grounds, the mural is publicly available to view whenever the Leith Dockers Club is open.</p>",
-        "icon" : "harbor",
+            "<p>Originally brought in as a potential Shutter Project contributor, internationally recognised and Edinburgh-based graffiti artist Elph was instead offered the opportunity to install this untitled mural of an androgynous manga-like character on the corner of Lovella in 2016 as part of The Mural Project.</p><p>Artist website: <a href='http://akaelph.com/'>www.akaelph.com</a></p>",
+        "icon" : "museum",
         "audio" : [
           {
             "file" : "CameronFoster.mp3",
             "transcript" : "CameronFoster.pdf",
             "label" : "Cameron Foster Audio Guide",
           },
-        ]
+        ],
       },
       "geometry" : {
         "type" : "Point",
-        "coordinates" : [-3.170117861,55.97073971],
+        "coordinates" : [-3.173371931,55.96859796],
       }
     },
     {
@@ -83,10 +83,55 @@ var muralData = {
 
         ],
       },
+
       "geometry" : {
         "type" : "Point",
         "coordinates" : [-3.170161848,55.9678748],
       }
-    }
+    },
+    {
+      "type" : "Feature",
+      "properties" : {
+        "name" : "Leith Dockers Club Mural",
+        "folder" : "DockersClub",
+        "artist" : "Tom Ewing",
+        "description" :
+            "<p>This mural was painted as a celebration of the history of both Leith and the Leith Dockers Club, and was unveiled by the author Irvine Welsh in early 2014. Although on private grounds, the mural is publicly available to view whenever the Leith Dockers Club is open.</p>",
+        "icon" : "harbor",
+        "audio" : [
+          {
+            "file" : "CameronFoster.mp3",
+            "transcript" : "CameronFoster.pdf",
+            "label" : "Cameron Foster Audio Guide",
+          },
+        ]
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.170117861,55.97073971],
+      }
+    },
+    {
+      "type" : "Feature",
+      "properties" : {
+        "name" : "Eduardo Paolozzi Mural",
+        "folder" : "Paolozzi",
+        "artist" : "Russell Ian Dempster",
+        "description" :
+            "<p>BLURB TO FOLLOW. TRANSCRIPT MISSING.</p>",
+        "icon" : "museum",
+        "audio" : [
+          {
+            "file" : "CameronFoster.mp3",
+            "transcript" : "CameronFoster.pdf",
+            "label" : "Cameron Foster Audio Guide",
+          },
+        ]
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.171943195,55.97456844],
+      }
+    },
   ]
 }
