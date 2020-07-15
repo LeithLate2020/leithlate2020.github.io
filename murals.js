@@ -114,6 +114,28 @@ var muralData = {
     {
       "type" : "Feature",
       "properties" : {
+        "name" : "Untitled Mural",
+        "folder" : "UntitledColl",
+        "artist" : "Artists&rsquo; Collective / Tim Chalk",
+        "description" :
+            "<p>BLURB TO FOLLOW.</p>",
+        "icon" : "mural",
+        "audio" : [
+          {
+            "file" : "CameronFoster.mp3",
+            "transcript" : "CameronFoster.pdf",
+            "label" : "Cameron Foster Audio Guide",
+          },
+        ]
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.17058848,55.97364409],
+      }
+    },
+    {
+      "type" : "Feature",
+      "properties" : {
         "name" : "Eduardo Paolozzi Mural",
         "folder" : "Paolozzi",
         "artist" : "Russell Ian Dempster",
@@ -197,6 +219,28 @@ var muralData = {
       "geometry" : {
         "type" : "Point",
         "coordinates" : [-3.175854,55.965529],
+      }
+    },
+    {
+      "type" : "Feature",
+      "properties" : {
+        "name" : "Swanfield Mural",
+        "folder" : "Swanfield",
+        "artist" : "David Wilkinson",
+        "description" :
+            "<p>BLURB TO FOLLOW. NO AUDIO YET. TRANSCRIPT MISSING.</p>",
+        "icon" : "muralpast",
+        "audio" : [
+          {
+            "file" : "CameronFoster.mp3",
+            "transcript" : "CameronFoster.pdf",
+            "label" : "Cameron Foster Audio Guide",
+          },
+        ]
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.176815,55.971693],
       }
     },
   ]
