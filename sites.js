@@ -8,6 +8,11 @@ var contentFolder = 'content';
 // Name of the top-level file which contains the GeoJSON data for the murals
 var muralDataFile = 'murals.json';
 
+// Melisa's custom icons
+var muralIconFile = 'icons/triangle-15.png';
+var muralPastIconFile = 'icons/triangle-stroked-15.png';
+var studioIconFile = 'icons/cemetery-JP-15.png';
+
 // Mapbox configuration
 
 // This is Melisa's map -- probably CHANGEME
@@ -77,20 +82,37 @@ muralData.features.forEach(function(mural, index){
 
 });
 
-/* Begin once map assets are loaded */
+// Begin once map assets are loaded
 
 map.on('load', function (e) {
-  /* Add the data to the map as a layer */
+
+  // Load icons
+  map.loadImage(muralIconFile, function(error, image) {
+    if (error) throw error;
+    map.addImage('mural', image);
+  });
+  map.loadImage(muralPastIconFile, function(error, image) {
+    if (error) throw error;
+    map.addImage('muralpast', image);
+  });
+  map.loadImage(studioIconFile, function(error, image) {
+    if (error) throw error;
+    map.addImage('studio', image);
+  });
+
+  // Add the data to the map as a symbol layer
+
   map.addLayer({
     "id": "murals",
     "type": "symbol",
-    /* Add a GeoJSON source containing place coordinates and information. */
+    // Add a GeoJSON source containing place coordinates and information
     "source": {
       "type": "geojson",
       "data": muralData,
     },
     'layout': {
-      'icon-image': '{icon}-15',
+      'icon-image': '{icon}',
+      'icon-size': 0.25,
       'icon-allow-overlap': false,
       'text-field': '{name}',
       'text-size' : 14,
