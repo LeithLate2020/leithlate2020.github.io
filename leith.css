@@ -41,7 +41,7 @@ body {
 
 #sidebar {
   display: none;
-  background-color: #ffffff;
+  background-color: #e7e7e7;
   position: absolute;
   right: 0;
   top: 0;
@@ -117,10 +117,16 @@ body {
 
 #sitename {
   font-weight: bold;
+  text-align: center;
 }
 
 #artist {
   font-style: italic;
+  text-align: center;
+}
+
+#year {
+  text-align: center;
 }
 
 audio {
@@ -129,4 +135,5 @@ audio {
 
 .audioclip {
   margin-bottom: 2%;
+  text-align: center;
 }
