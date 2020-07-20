@@ -26,7 +26,7 @@ var map = new mapboxgl.Map({
     container: 'mapcontainer',
     style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
     center: [-3.164, 55.968], // starting position [lng, lat]
-    zoom: 13, // starting zoom
+    zoom: 13.5, // starting zoom
 });
 
 /////////////////////////////////////////////////////////////////////////////
@@ -38,7 +38,7 @@ var siteContent = [];
 var siteImage = [];
 
 /////////////////////////////////////////////////////////////////////////////
-// Prepare content for each mural on the map
+// Prebuild content for each mural on the map
 muralData.features.forEach(function(mural, index){
   // Build up complete sidebar content in siteHTML
   let siteHTML;
@@ -143,12 +143,22 @@ map.on('load', function (e) {
       'icon-image': '{icon}',
       'icon-size': 0.25,
       'icon-allow-overlap': false,
-      'text-field': '{name}',
+//      'text-field': '{name}',
       'text-size' : 14,
       'text-anchor': 'top',
       'text-offset': [0,0.7],
     }
   });
+
+
+// Looks like label properties are set per layer so this won't work on a single site
+//  map.on('mousemove', 'murals', function(e) {
+//    let siteId = e.features[0].properties.id;
+//    let siteName = e.features[0].properties.name;
+//    console.log(siteId);
+//    map.setLayoutProperty('murals', 'text-field', siteName);
+//    );
+//  });
 
   // When user clicks on a map feature, open the content
   map.on('click', 'murals', function(e) {
