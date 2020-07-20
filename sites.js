@@ -1,21 +1,21 @@
 "use strict";
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////////////////////
 // Name of the top-level folder which contains the subfolders of content for each site
 var contentFolder = 'content';
 
 // Name of the top-level file which contains the GeoJSON data for the murals
 var muralDataFile = 'murals.json';
 
-// Melisa's custom icons
+// Melisa's custom icons -- converted to PNG because SVG doesn't work
 var muralIconFile = 'icons/triangle-15.png';
 var muralPastIconFile = 'icons/triangle-stroked-15.png';
 var studioIconFile = 'icons/cemetery-JP-15.png';
 
+/////////////////////////////////////////////////////////////////////////////
 // Mapbox configuration
 
-// This is Melisa's map -- probably CHANGEME
+// This is Melisa's map -- CHANGEME
 // mapboxgl.accessToken = 'pk.eyJ1IjoibWVsaXNhcGF6IiwiYSI6ImNrOXdqdWRtdDA5aTkzZ3VoYXhramNyZjgifQ.V3kNFUghK_8qlcj5ac_WPQ';
 
 // This is the map from leithlatetours@gmail.com
@@ -29,8 +29,7 @@ var map = new mapboxgl.Map({
     zoom: 14, // starting zoom
 });
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////////////////////
 // An array of strings with the file path to the content for each site
 var siteContentPath = [];
 // An array of jQuery objects with the sidebar HTML content for each site
@@ -38,6 +37,7 @@ var siteContent = [];
 // An array of jQuery objects with the initial HTML image content for each site
 var siteImage = [];
 
+/////////////////////////////////////////////////////////////////////////////
 // Prepare content for each mural on the map
 muralData.features.forEach(function(mural, index){
   // Build up complete sidebar content in siteHTML
@@ -88,15 +88,11 @@ muralData.features.forEach(function(mural, index){
 
 });
 
-// Closing the content can be triggered in more than one way
+// Prepare content for each studio on the map
+// TODO
 
-function closeContent() {
-  $("#sidebar").css("display","none");
-  $("#content").css("display","none");
-  $("#overlay").css("display","none");
-  $("#close").css("display","none");
-}
-
+/////////////////////////////////////////////////////////////////////////////
+// Open site content by displaying the respective blocks
 function openContent(siteId) {
   $("#sidebar").css("display","block");
   $("#content").css("display","flex");
@@ -108,13 +104,16 @@ function openContent(siteId) {
   $("#content").html(siteImage[siteId]);
 };
 
+// Close site content by hiding the respective blocks
+function closeContent() {
+  $("#sidebar").css("display","none");
+  $("#content").css("display","none");
+  $("#overlay").css("display","none");
+  $("#close").css("display","none");
+}
 
-
-// Prepare content for each studio on the map
-// TODO
-
+/////////////////////////////////////////////////////////////////////////////
 // Begin once map assets are loaded
-
 map.on('load', function (e) {
 
   // Load icons
@@ -132,7 +131,6 @@ map.on('load', function (e) {
   });
 
   // Add the data to the map as a symbol layer
-
   map.addLayer({
     "id": "murals",
     "type": "symbol",
@@ -152,33 +150,24 @@ map.on('load', function (e) {
     }
   });
 
-  // When user clicks on a feature in the places layer, open the content
+  // When user clicks on a map feature, open the content
   map.on('click', 'murals', function(e) {
     let siteId = e.features[0].properties.id;
     openContent(siteId);
 
-    // When user clicks on close div, close the content
+    // When user clicks on close div or background, close the content
     $("#close").click(function() { closeContent(); });
     $("#content").click(function() { closeContent(); });
 
-
-    // This could be more elegantly done in the HTML but for some reason
-    // div > a > img is hell to style under flexbox.
+    // When user clicks on feature image, open fullsize version in another tab
+    // This could be cleanly done in the HTML but for some reason
+    // div > a > img is a nightmare to style under flexbox.
     // div > img works fine.
-    $("#featureimage").click(function() {
-      window.open(siteContentPath[siteId] + "fullsize.jpg","_blank")
+    $("#featureimage").click(function(e) {
+      window.open(siteContentPath[siteId] + "fullsize.jpg","_blank");
+      // We don't want this click to also close the content window
+      e.stopPropagation();
     });
-
-
-//    var coordinates = e.features[0].geometry.coordinates.slice();
-//    var description = e.features[0].properties.description;
-
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-//    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-//      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-//    }
   });
 
   // Change the cursor to a pointer when the mouse is over the murals layer.
@@ -190,5 +179,16 @@ map.on('load', function (e) {
   map.on('mouseleave', 'murals', function() {
     map.getCanvas().style.cursor = '';
   });
-
 });
+
+
+
+//    var coordinates = e.features[0].geometry.coordinates.slice();
+//    var description = e.features[0].properties.description;
+
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+//    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+//      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+//    }
