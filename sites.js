@@ -31,13 +31,14 @@ var map = new mapboxgl.Map({
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-// An array of jQuery objects with the sidebar content for each site
+// An array of strings with the file path to the content for each site
+var siteContentPath = [];
+// An array of jQuery objects with the sidebar HTML content for each site
 var siteContent = [];
-// An array of jQuery objects with the initial image content for each site
+// An array of jQuery objects with the initial HTML image content for each site
 var siteImage = [];
 
-// Prepare content for each item on the map
+// Prepare content for each mural on the map
 muralData.features.forEach(function(mural, index){
   // Build up complete sidebar content in siteHTML
   let siteHTML;
@@ -75,15 +76,42 @@ muralData.features.forEach(function(mural, index){
   };
   siteHTML += "</div>\n";
 
-  imageHTML = "<a href='" + contentPath + "fullsize.jpg' target='_blank'>";
-  imageHTML += "<img src='" + contentPath + "feature.jpg' alt='";
+//  imageHTML = "<a href='" + contentPath + "fullsize.jpg' target='_blank'>";
+  imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";
   imageHTML += "Image of " + mural.properties.name;
-  imageHTML += "'></a>";
+  imageHTML += "'>";
+//  imageHTML += "'></a>";
 
+  siteContentPath[index] = contentPath;
   siteContent[index] = siteHTML;
   siteImage[index] = imageHTML;
 
 });
+
+// Closing the content can be triggered in more than one way
+
+function closeContent() {
+  $("#sidebar").css("display","none");
+  $("#content").css("display","none");
+  $("#overlay").css("display","none");
+  $("#close").css("display","none");
+}
+
+function openContent(siteId) {
+  $("#sidebar").css("display","block");
+  $("#content").css("display","flex");
+  $("#overlay").css("display","block");
+  $("#close").css("display","block");
+
+  // Fill content panels with prebuilt content
+  $("#sidebar").html(siteContent[siteId]);
+  $("#content").html(siteImage[siteId]);
+};
+
+
+
+// Prepare content for each studio on the map
+// TODO
 
 // Begin once map assets are loaded
 
@@ -126,22 +154,19 @@ map.on('load', function (e) {
 
   // When user clicks on a feature in the places layer, open the content
   map.on('click', 'murals', function(e) {
-    $("#sidebar").css("display","block");
-    $("#content").css("display","flex");
-    $("#overlay").css("display","block");
-    $("#close").css("display","block");
-
-    // Fill content panels with prebuilt content
     let siteId = e.features[0].properties.id;
-    $("#sidebar").html(siteContent[siteId]);
-    $("#content").html(siteImage[siteId]);
+    openContent(siteId);
 
     // When user clicks on close div, close the content
-    $("#close").click(function() {
-      $("#sidebar").css("display","none");
-      $("#content").css("display","none");
-      $("#overlay").css("display","none");
-      $("#close").css("display","none");
+    $("#close").click(function() { closeContent(); });
+    $("#content").click(function() { closeContent(); });
+
+
+    // This could be more elegantly done in the HTML but for some reason
+    // div > a > img is hell to style under flexbox.
+    // div > img works fine.
+    $("#featureimage").click(function() {
+      window.open(siteContentPath[siteId] + "fullsize.jpg","_blank")
     });
 
 
@@ -165,4 +190,5 @@ map.on('load', function (e) {
   map.on('mouseleave', 'murals', function() {
     map.getCanvas().style.cursor = '';
   });
+
 });

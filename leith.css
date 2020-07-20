@@ -53,19 +53,54 @@ body {
 }
 
 #content {
-  display: none;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   width: 67%;
   height: 100%;
   z-index: 2;
+  display: none;
+  /* Bug on feature images with portrait ratios: */
+  /* Changing this property modifies the bug */
+  /* As "column" we get excess left/right margins */
+  /* As "row" we get top/bottom overflow */
+  /***************************************/
+/*  flex-direction: column; */
+  /***************************************/
+  justify-content: center;
+  align-items: center;
 }
 
 #content img {
   max-width: 100%;
   max-height: 100%;
 }
+
+#featureimage {
+  cursor: pointer;
+}
+
+
+/* #content a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex: 0 1 1;
+  max-width: 100%;
+  max-height: 100%; */
+/* Uncomment this to see the bug more clearly */
+/*  border: 2px solid orange; */
+/* } */
+
+/*
+#content > a > img {
+  display: block;
+  position: relative; */
+/*  flex: 0 1 auto;
+  min-height: 0px; */
+/*  max-height: 100%;
+  max-width: 100%;
+} */
+
 
 #close {
   display: none;
