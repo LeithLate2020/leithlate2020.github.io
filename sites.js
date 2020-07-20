@@ -26,7 +26,7 @@ var map = new mapboxgl.Map({
     container: 'mapcontainer',
     style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
     center: [-3.164, 55.968], // starting position [lng, lat]
-    zoom: 14, // starting zoom
+    zoom: 13, // starting zoom
 });
 
 /////////////////////////////////////////////////////////////////////////////

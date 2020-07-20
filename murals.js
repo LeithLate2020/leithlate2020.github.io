@@ -9,7 +9,7 @@ var muralData = {
         "artist" : "Kirsty Whiten",
         "year" : "2015",
         "description" :
-            "<p>Kirsty Whiten’s Wronger Rites mural was commissioned as part of The Mural Project for the LeithLate15 festival, with associated temporary public art installations on Leith Walk opposite the former Edinburgh Printmakers and an exhibition at the former Whitespace gallery. In 2017 two thirds of the mural were sadly demolished, though the horse figure remains intact.</p><p>Artist website: <a href='https://www.kirstywhiten.com/'>www.kirstywhiten.com</a></p>",
+            "<p>Kirsty Whiten’s Wronger Rites mural was commissioned as part of The Mural Project for the LeithLate15 festival, with associated temporary public art installations on Leith Walk opposite the former Edinburgh Printmakers and an exhibition at the former Whitespace gallery. In 2017 two thirds of the mural were sadly demolished, though the horse figure remains intact.</p><p>Artist website: <a href='https://www.kirstywhiten.com/'>www.kirstywhiten.com</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -37,7 +37,7 @@ var muralData = {
         "artist" : "Elph",
         "year" : "2016",
         "description" :
-            "<p>Originally brought in as a potential Shutter Project contributor, internationally recognised and Edinburgh-based graffiti artist Elph was instead offered the opportunity to install this untitled mural of an androgynous manga-like character on the corner of Lovella in 2016 as part of The Mural Project.</p><p>Artist website: <a href='http://akaelph.com/'>www.akaelph.com</a></p>",
+            "<p>Originally brought in as a potential Shutter Project contributor, internationally recognised and Edinburgh-based graffiti artist Elph was instead offered the opportunity to install this untitled mural of an androgynous manga-like character on the corner of Lovella in 2016 as part of The Mural Project.</p><p>Artist website: <a href='http://akaelph.com/'>www.akaelph.com</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -249,6 +249,29 @@ var muralData = {
       "geometry" : {
         "type" : "Point",
         "coordinates" : [-3.176815,55.971693],
+      }
+    },
+    {
+      "type" : "Feature",
+      "properties" : {
+        "name" : "Abbeyhill Mural",
+        "folder" : "Abbeyhill",
+        "artist" : "Fraser Gray &amp; FIST",
+        "year" : "2015",
+        "description" :
+            "<p>This mural was installed as part of a community engagement project working with the older residents of nearby Croft an Righ sheltered housing complex. The design acts as a timeline for the development of the local area from its industrial heritage of local brewery chimneys, the nearby former Astoria music venue, local garages and most recently, student housing developments.</p><p>Artist website: <a href='www.ichbinfist.com'>www.ichbinfist.com</a>.</p><p>Artist website: <a href='https://www.frasergray.com/'>www.frasergray.com</a>.</p>",
+        "icon" : "mural",
+        "audio" : [
+          {
+            "file" : "CameronFoster.mp3",
+            "transcript" : "CameronFoster.pdf",
+            "label" : "Cameron Foster Audio Guide",
+          },
+        ]
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.1727936,55.9549236],
       }
     },
   ]
