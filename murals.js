@@ -259,7 +259,7 @@ var muralData = {
         "artist" : "Fraser Gray &amp; FIST",
         "year" : "2015",
         "description" :
-            "<p>This mural was installed as part of a community engagement project working with the older residents of nearby Croft an Righ sheltered housing complex. The design acts as a timeline for the development of the local area from its industrial heritage of local brewery chimneys, the nearby former Astoria music venue, local garages and most recently, student housing developments.</p><p>Artist website: <a href='www.ichbinfist.com'>www.ichbinfist.com</a>.</p><p>Artist website: <a href='https://www.frasergray.com/'>www.frasergray.com</a>.</p>",
+            "<p>This mural was installed as part of a community engagement project working with the older residents of nearby Croft an Righ sheltered housing complex. The design acts as a timeline for the development of the local area from its industrial heritage of local brewery chimneys, the nearby former Astoria music venue, local garages and most recently, student housing developments.</p><p>Artist website: <a href='http://www.ichbinfist.com/'>www.ichbinfist.com</a>.</p><p>Artist website: <a href='https://www.frasergray.com/'>www.frasergray.com</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
