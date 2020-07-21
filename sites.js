@@ -68,7 +68,7 @@ muralData.features.forEach(function(mural, index){
   if (mural.properties.audio) {
     mural.properties.audio.forEach(function(clip) {
       siteHTML += "<div class='audioclip'>\n";
-      siteHTML += clip.label;
+      siteHTML += "<div class='audiolabel'>" + clip.label + "</div>\n";
       // Use native player
       siteHTML += "<div class='audioplayer'><audio controls>";
       siteHTML += "<source src='" + contentPath + clip.file;

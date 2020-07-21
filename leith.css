@@ -135,6 +135,10 @@ audio {
   width: 100%;
 }
 
+.audiolabel {
+  font-weight: 700;
+}
+
 .audioclip {
   margin-bottom: 2%;
   text-align: center;
