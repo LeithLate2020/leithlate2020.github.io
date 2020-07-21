@@ -123,7 +123,7 @@ var muralData = {
         "artist" : "Artists&rsquo; Collective / Tim Chalk",
         "year" : "1984",
         "description" :
-            "<p>BLURB TO FOLLOW.</p>",
+            "<p>This waterfront mural depicting seagulls and various nautical flags was painted in 1984 as part of an environmental project for Links View House, with the subject matter chosen by residents. The mural was accompanied by mosaic panels made by local children depicting Leith landmarks, installed along the front of the adjacent Leith Social Work Department building, now demolished.</p><p>Artist website: <a href='https://www.chalkworks.com/' target='_blank'>www.chalkworks.com</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -146,7 +146,7 @@ var muralData = {
         "artist" : "Russell Ian Dempster",
         "year" : "2014",
         "description" :
-            "<p>BLURB TO FOLLOW. TRANSCRIPT MISSING.</p>",
+            "<p>This mural launched in 2014 as part of The Mural Project and is a portrait of the artist Eduardo Paolozzi as a young man. Paolozzi was the forerunner of the Pop Art movement in Britain and was born in Leith in 1924. There are currently no examples of Paolozzi’s work on public display in Leith.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -169,7 +169,7 @@ var muralData = {
         "artist" : "Tim Chalk and Paul Grime",
         "year" : "1985",
         "description" :
-            "<p>BLURB TO FOLLOW. TRANSCRIPT MISSING.</p>",
+            "<p>The mural artwork was based on a series of workshops run with local people during 1985, referencing key points in Leith’s history and a depiction of the area at the time. Its original title was Moving into the future with a stronger community, exemplified by the last &lsquo;puzzle piece&rsquo; on the bottom right hand side of the mural.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -177,6 +177,12 @@ var muralData = {
             "transcript" : "CameronFoster.pdf",
             "label" : "Cameron Foster Audio Guide",
           },
+          {
+            "file" : "TimChalk.mp3",
+            "transcript" : "TimChalk.pdf",
+            "label" : "Tim Chalk on Leith History Mural",
+          },
+
         ]
       },
       "geometry" : {
@@ -190,8 +196,9 @@ var muralData = {
         "name" : "Too Much Fun Club Mural",
         "folder" : "TooMuchFun",
         "artist" : "The Too Much Fun Club",
+        "year" : "2017",
         "description" :
-            "<p>BLURB TO FOLLOW. NO AUDIO YET. TRANSCRIPT MISSING.</p>",
+            "<p>This colourful mural design was produced by artists Ross MacRae and Nem Sarton in collaboration with young people at Pilrig Park Special Secondary School and nearby Pilmeny Youth Centre, who took part in a series of workshops with the artists prior to its installation. The mural is situated on an adjoining wall of Pilrig Park Special Secondary School and the park. NO AUDIO YET. TRANSCRIPT MISSING.</p><p>Artist website: <a href='http://www.thetmfc.com/' target='_blank'>www.thetmfc.com</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -213,15 +220,8 @@ var muralData = {
         "folder" : "SevenDeadly",
         "artist" : "Guido van Helten",
         "description" :
-            "<p>BLURB TO FOLLOW. NO AUDIO YET. TRANSCRIPT MISSING.</p>",
+            "<p>Australian mural artist Guido van Helten here references archive photographic images, recreating them large-scale on the former Victoria India Rubber Mill. The characters depicted are from Edinburgh Festival production The Seven Deadly Sins in 1961. Another of Guido’s murals installed at the same time is still in situ at Out of the Blue Drill Hall on Dalmeny Street, depicting a survivor of the Gretna Train Disaster in his old age.</p><p>Artist website: <a href='https://www.guidovanhelten.com/' target='_blank'>www.guidovanhelten.com</a>.</p>",
         "icon" : "muralpast",
-        "audio" : [
-          {
-            "file" : "CameronFoster.mp3",
-            "transcript" : "CameronFoster.pdf",
-            "label" : "Cameron Foster Audio Guide",
-          },
-        ]
       },
       "geometry" : {
         "type" : "Point",
@@ -231,20 +231,13 @@ var muralData = {
     {
       "type" : "Feature",
       "properties" : {
-        "name" : "Swanfield Mural",
+        "name" : "Swanfield Mill Mural",
         "folder" : "Swanfield",
         "artist" : "David Wilkinson",
         "year" : "1986",
         "description" :
-            "<p>BLURB TO FOLLOW. NO AUDIO YET. TRANSCRIPT MISSING.</p>",
+            "<p>This mural referenced and was situated opposite the former Swanfield Flour Mill, of which there is now only one remaining original building still standing. It was painted to accompany other works at the entrance gates into what is now the Swanfield Industrial Estate, including the cast concrete corn sheaf, the metalwork archway and the painted archway on Great Junction Street, all of which are still in situ. The mural was sadly removed in 2016 due to deterioration.</p>",
         "icon" : "muralpast",
-        "audio" : [
-          {
-            "file" : "CameronFoster.mp3",
-            "transcript" : "CameronFoster.pdf",
-            "label" : "Cameron Foster Audio Guide",
-          },
-        ]
       },
       "geometry" : {
         "type" : "Point",
