@@ -70,5 +70,5 @@ It's hopefully self-explanatory. Notice a few things:
 
 * that's HTML code inside the description;
 * there can be a variable number of audio clips. Each has file/transcript/label inside curly brackets, but the entire list of clips is inside *square* brackets, to show it's a list;
-* the code block has to go immediately after or before the code block for another feature, because it's part of a *list of features.* Look for the square brackets around that list if you want to understand the format better;
+* the new code block has to go immediately after or before the code block for another feature, because it's part of a *list of features.* Look for the square brackets around that list if you want to understand the format better;
 * remember to update the GPS coordinates.
