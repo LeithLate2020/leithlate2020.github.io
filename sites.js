@@ -3,9 +3,11 @@
 /////////////////////////////////////////////////////////////////////////////
 // Name of the top-level folder which contains the subfolders of content for each site
 var muralFolder = 'murals';
+var studioFolder = 'studios';
 
 // Name of the top-level file which contains the GeoJSON data for the murals
 var muralDataFile = 'murals.json';
+var studioDataFile = 'studios.json';
 
 // Melisa's custom icons -- converted to PNG because SVG doesn't work
 var muralIconFile = 'icons/triangle-15.png';
@@ -31,11 +33,16 @@ var map = new mapboxgl.Map({
 
 /////////////////////////////////////////////////////////////////////////////
 // An array of strings with the file path to the content for each site
-var siteContentPath = [];
+var muralContentPath = [];
+var studioContentPath = [];
+
 // An array of jQuery objects with the sidebar HTML content for each site
-var siteContent = [];
+var muralContent = [];
+var studioContent = [];
+
 // An array of jQuery objects with the initial HTML image content for each site
-var siteImage = [];
+var muralImage = [];
+var studioImage = [];
 
 /////////////////////////////////////////////////////////////////////////////
 // Prebuild content for each mural on the map
@@ -82,14 +89,38 @@ muralData.features.forEach(function(mural, index){
   imageHTML += "'>";
 //  imageHTML += "'></a>";
 
-  siteContentPath[index] = contentPath;
-  siteContent[index] = siteHTML;
-  siteImage[index] = imageHTML;
+  // Store the assembled content for live access
+  muralContentPath[index] = contentPath;
+  muralContent[index] = siteHTML;
+  muralImage[index] = imageHTML;
 
 });
 
-// Prepare content for each studio on the map
-// TODO
+// Prebuild content for each studio on the map
+studioData.features.forEach(function(studio, index){
+  // Build up complete sidebar content in siteHTML
+  let siteHTML;
+  let imageHTML;
+  let contentPath = studioFolder + "/" + studio.properties.folder + "/";
+
+  // Assign an ID to each mural
+  studio.properties.id = index;
+
+  // Build the HTML raw for jQuery performance reasons
+  siteHTML = "<div id='sitename'>" + studio.properties.name + "</div>\n";
+  siteHTML += "<div id='description'>" + studio.properties.description + "</div>\n";
+
+
+  imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";
+  imageHTML += "Image of " + studio.properties.name;
+  imageHTML += "'>";
+
+  // Store the assembled content for live access
+  studioContentPath[index] = contentPath;
+  studioContent[index] = siteHTML;
+  studioImage[index] = imageHTML;
+
+});
 
 /////////////////////////////////////////////////////////////////////////////
 // Open site content by displaying the respective blocks
@@ -98,10 +129,6 @@ function openContent(siteId) {
   $("#content").css("display","flex");
   $("#overlay").css("display","block");
   $("#close").css("display","block");
-
-  // Fill content panels with prebuilt content
-  $("#sidebar").html(siteContent[siteId]);
-  $("#content").html(siteImage[siteId]);
 };
 
 // Close site content by hiding the respective blocks
@@ -130,7 +157,7 @@ map.on('load', function (e) {
     map.addImage('studio', image);
   });
 
-  // Add the data to the map as a symbol layer
+  // Add the murals to the map as a symbol layer
   map.addLayer({
     "id": "murals",
     "type": "symbol",
@@ -144,9 +171,25 @@ map.on('load', function (e) {
       'icon-size': 0.25,
       'icon-allow-overlap': false,
 //      'text-field': '{name}',
-      'text-size' : 14,
-      'text-anchor': 'top',
-      'text-offset': [0,0.7],
+//      'text-size' : 14,
+//      'text-anchor': 'top',
+//      'text-offset': [0,0.7],
+    }
+  });
+
+  // Add the studios to the map as a symbol layer
+  map.addLayer({
+    "id": "studios",
+    "type": "symbol",
+    // Add a GeoJSON source containing place coordinates and information
+    "source": {
+      "type": "geojson",
+      "data": studioData,
+    },
+    'layout': {
+      'icon-image': '{icon}',
+      'icon-size': 0.25,
+      'icon-allow-overlap': false,
     }
   });
 
@@ -165,6 +208,10 @@ map.on('load', function (e) {
     let siteId = e.features[0].properties.id;
     openContent(siteId);
 
+    // Fill content panels with prebuilt content
+    $("#sidebar").html(muralContent[siteId]);
+    $("#content").html(muralImage[siteId]);
+
     // When user clicks on close div or background, close the content
     $("#close").click(function() { closeContent(); });
     $("#content").click(function() { closeContent(); });
@@ -174,14 +221,37 @@ map.on('load', function (e) {
     // div > a > img is a nightmare to style under flexbox.
     // div > img works fine.
     $("#featureimage").click(function(e) {
-      window.open(siteContentPath[siteId] + "fullsize.jpg","_blank");
+      window.open(muralContentPath[siteId] + "fullsize.jpg","_blank");
       // We don't want this click to also close the content window
       e.stopPropagation();
     });
   });
 
-  // Change the cursor to a pointer when the mouse is over the murals layer.
+  map.on('click', 'studios', function(e) {
+    let siteId = e.features[0].properties.id;
+    openContent(siteId);
+
+    // Fill content panels with prebuilt content
+    $("#sidebar").html(studioContent[siteId]);
+    $("#content").html(studioImage[siteId]);
+
+    // When user clicks on close div or background, close the content
+    $("#close").click(function() { closeContent(); });
+    $("#content").click(function() { closeContent(); });
+
+    // When user clicks on feature image, open fullsize version in another tab
+    $("#featureimage").click(function(e) {
+      window.open(studioContentPath[siteId] + "fullsize.jpg","_blank");
+      // We don't want this click to also close the content window
+      e.stopPropagation();
+    });
+  });
+
+  // Change the cursor to a pointer when the mouse is over a symbol layer.
   map.on('mouseenter', 'murals', function() {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+  map.on('mouseenter', 'studios', function() {
     map.getCanvas().style.cursor = 'pointer';
   });
 
@@ -189,6 +259,10 @@ map.on('load', function (e) {
   map.on('mouseleave', 'murals', function() {
     map.getCanvas().style.cursor = '';
   });
+  map.on('mouseleave', 'studios', function() {
+    map.getCanvas().style.cursor = '';
+  });
+
 });
 
 
