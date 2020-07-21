@@ -96,6 +96,7 @@ muralData.features.forEach(function(mural, index){
 
 });
 
+/////////////////////////////////////////////////////////////////////////////
 // Prebuild content for each studio on the map
 studioData.features.forEach(function(studio, index){
   // Build up complete sidebar content in siteHTML
