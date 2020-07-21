@@ -18,6 +18,8 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
 }
 
 #mapcontainer {
@@ -116,7 +118,7 @@ body {
 /* CHANGEME need responsive adjustments here */
 
 #sitename {
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
 }
 
