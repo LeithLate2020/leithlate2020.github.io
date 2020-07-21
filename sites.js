@@ -2,7 +2,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // Name of the top-level folder which contains the subfolders of content for each site
-var contentFolder = 'content';
+var muralFolder = 'murals';
 
 // Name of the top-level file which contains the GeoJSON data for the murals
 var muralDataFile = 'murals.json';
@@ -43,7 +43,7 @@ muralData.features.forEach(function(mural, index){
   // Build up complete sidebar content in siteHTML
   let siteHTML;
   let imageHTML;
-  let contentPath = contentFolder + "/" + mural.properties.folder + "/";
+  let contentPath = muralFolder + "/" + mural.properties.folder + "/";
 
   // Assign an ID to each mural
   mural.properties.id = index;
