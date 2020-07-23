@@ -5,7 +5,7 @@
 var muralFolder = 'murals';
 var studioFolder = 'studios';
 
-// Name of the top-level file which contains the GeoJSON data for the murals
+// Name of the top-level file which contains the GeoJSON data for each site
 var muralDataFile = 'murals.json';
 var studioDataFile = 'studios.json';
 
@@ -40,7 +40,7 @@ var studioContentPath = [];
 var muralContent = [];
 var studioContent = [];
 
-// An array of jQuery objects with the initial HTML image content for each site
+// An array of jQuery objects with the image HTML content for each site
 var muralImage = [];
 var studioImage = [];
 
@@ -125,7 +125,7 @@ studioData.features.forEach(function(studio, index){
 
 /////////////////////////////////////////////////////////////////////////////
 // Open site content by displaying the respective blocks
-function openContent(siteId) {
+function openContent() {
   $("#sidebar").css("display","block");
   $("#content").css("display","flex");
   $("#overlay").css("display","block");
@@ -207,7 +207,7 @@ map.on('load', function (e) {
   // When user clicks on a map feature, open the content
   map.on('click', 'murals', function(e) {
     let siteId = e.features[0].properties.id;
-    openContent(siteId);
+    openContent();
 
     // Fill content panels with prebuilt content
     $("#sidebar").html(muralContent[siteId]);

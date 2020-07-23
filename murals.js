@@ -167,7 +167,7 @@ var muralData = {
         "name" : "Leith History Mural",
         "folder" : "LeithHistory",
         "artist" : "Tim Chalk and Paul Grime",
-        "year" : "1985",
+        "year" : "1985 / 1986",
         "description" :
             "<p>The mural artwork was based on a series of workshops run with local people during 1985, referencing key points in Leith’s history and a depiction of the area at the time. Its original title was Moving into the future with a stronger community, exemplified by the last &lsquo;puzzle piece&rsquo; on the bottom right hand side of the mural.</p>",
         "icon" : "mural",
