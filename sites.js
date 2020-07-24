@@ -27,7 +27,7 @@ mapboxgl.accessToken =
 var map = new mapboxgl.Map({
     container: 'mapcontainer',
     style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
-    center: [-3.152, 55.966], // starting position [lng, lat]
+    center: [-3.162, 55.966], // starting position [lng, lat]
     zoom: 13.2, // starting zoom
 });
 
@@ -111,6 +111,39 @@ studioData.features.forEach(function(studio, index){
   siteHTML = "<div id='sitename'>" + studio.properties.name + "</div>\n";
   siteHTML += "<div id='description'>" + studio.properties.description + "</div>\n";
 
+  // There can be a variable number of video clips
+  if (studio.properties.video) {
+    studio.properties.video.forEach(function(clip) {
+      siteHTML += "<div class='videoclip'>\n";
+      siteHTML += "<div class='videolabel'>" + clip.label + "</div>\n";
+
+
+// This is the actual video embed code, commented out whilst the videos are private
+//      siteHTML += "<iframe src='" + clip.url + "' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>\n;"
+
+      // This is not the actual video but a Paolozzi placeholder
+      siteHTML += "<iframe src='https://player.vimeo.com/video/31835579' frameborder='0' allow='autoplay; fullscreen' width='100%' height='100%' allowfullscreen></iframe>\n";
+      siteHTML += "</div>\n";
+
+      // Use native player
+//      siteHTML += "<video controls>";
+//      siteHTML += "<source src='" + contentPath + clip.file;
+//      siteHTML += "' type='video/mp4'>";
+//      if (clip.subtitles) {
+//        siteHTML += "<track label='English' kind='subtitles' srclang='en' src='";
+//        siteHTML += contentPath + clip.subtitles + "' default>";
+//      }
+//      siteHTML += "Your browser does not support the video element.</video>";
+//      siteHTML += "</div>\n";
+
+
+      // Each clip should have a transcript in PDF
+//      siteHTML += "<div class='transcript'>";
+//      siteHTML += "[<a href='" + contentPath + clip.transcript;
+//      siteHTML += "'>transcript</a>]</div>\n";
+//      siteHTML += "</div>\n";
+    })
+  };
 
   imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";
   imageHTML += "Image of " + studio.properties.name;
