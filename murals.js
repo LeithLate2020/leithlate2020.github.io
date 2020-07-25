@@ -274,13 +274,6 @@ var muralData = {
         "description" :
             "<p>This mural was installed as part of a community engagement project working with the older residents of nearby Croft an Righ sheltered housing complex. The design acts as a timeline for the development of the local area from its industrial heritage of local brewery chimneys, the nearby former Astoria music venue, local garages and most recently, student housing developments.</p><p>Artist website: <a href='http://www.ichbinfist.com/' target='_blank'>www.ichbinfist.com</a>.</p><p>Artist website: <a href='https://www.frasergray.com/' target='_blank'>www.frasergray.com</a>.</p><p>Photo: <a href='http://katgollock.com/' target='_blank'>Kat Gollock</a>.</p>",
         "icon" : "mural",
-        "audio" : [
-          {
-            "file" : "CameronFoster.mp3",
-            "transcript" : "CameronFoster.pdf",
-            "label" : "Cameron Foster Audio Guide",
-          },
-        ]
       },
       "geometry" : {
         "type" : "Point",
