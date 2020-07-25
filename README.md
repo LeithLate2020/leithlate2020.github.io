@@ -17,6 +17,8 @@ The content for each map feature (a mural or a studio) is held in two places: me
 
 Media such as images, audio files and transcripts are collected in folders here. So e.g. the Dockers Club mural media is in `murals/DockersClub` and the Drill Hall media is in `studios/OOTBDrillHall`. To add a site, create a new folder in the appropriate place. Avoid spaces in its name. It would be good practice to look in other folders to see how their files are named and organised.
 
+Video files are not kept in these folders. The files are too large to be hosted on github. Instead they are hosted on Vimeo and linked to. See below for the specifics.
+
 The only contents of these folders that are used automatically are the feature images. Put the full-sized image in `fullsize.jpg` and make a reduced version (1200px x 1200px max) named `feature.jpg`. The latter is the image that comes up first, and the former is the image that will appear if you click through to a separate tab.
 
 ### Information
@@ -70,5 +72,6 @@ It's hopefully self-explanatory. Notice a few things:
 
 * that's HTML code inside the description;
 * there can be a variable number of audio clips. Each has file/transcript/label inside curly brackets, but the entire list of clips is inside *square* brackets, to show it's a list;
+* video is added just like audio, but we specify url/label instead of file/transcript/label;
 * the new code block has to go immediately after or before the code block for another feature, because it's part of a *list of features.* Look for the square brackets around that list if you want to understand the format better;
 * remember to update the GPS coordinates.
