@@ -67,6 +67,7 @@ body {
   z-index: 2;
   padding: 2% 2% 2% 2%;
   border: 2px solid black;
+  overflow-y: auto;
 }
 
 #content {
@@ -183,7 +184,7 @@ audio, video {
 }
 
 .audioclip, .videoclip {
-  margin-bottom: 2%;
+  margin-bottom: 4%;
   text-align: center;
 }
 

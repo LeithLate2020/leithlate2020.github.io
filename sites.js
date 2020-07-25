@@ -64,8 +64,8 @@ muralData.features.forEach(function(mural, index){
   siteHTML += "<div id='description'>" + mural.properties.description + "</div>\n";
 
   // There can be a variable number of audio clips
-  siteHTML += "<div id='audio'>";
   if (mural.properties.audio) {
+    siteHTML += "<div id='audio'>";
     mural.properties.audio.forEach(function(clip) {
       siteHTML += "<div class='audioclip'>\n";
       siteHTML += "<div class='audiolabel'>" + clip.label + "</div>\n";
@@ -79,9 +79,26 @@ muralData.features.forEach(function(mural, index){
       siteHTML += "[<a href='" + contentPath + clip.transcript;
       siteHTML += "'>transcript</a>]</div>\n";
       siteHTML += "</div>\n";
-    })
+    });
+    siteHTML += "</div>\n";
   };
-  siteHTML += "</div>\n";
+
+  // There can be a variable number of video clips
+  if (mural.properties.video) {
+    siteHTML += "<div class='video'>";
+    mural.properties.video.forEach(function(clip) {
+      siteHTML += "<div class='videoclip'>\n";
+      siteHTML += "<div class='videolabel'>" + clip.label + "</div>\n";
+
+// This is the actual video embed code, commented out whilst the videos are private
+      siteHTML += "<iframe src='" + clip.url + "' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>\n";
+
+      // This is not the actual video but a Paolozzi placeholder
+//      siteHTML += "<iframe src='https://player.vimeo.com/video/31835579' frameborder='0' allow='autoplay; fullscreen' width='100%' height='100%' allowfullscreen></iframe>\n";
+      siteHTML += "</div>\n";
+    });
+    siteHTML += "</div>\n";
+  };
 
 //  imageHTML = "<a href='" + contentPath + "fullsize.jpg' target='_blank'>";
   imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";

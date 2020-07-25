@@ -46,6 +46,12 @@ var muralData = {
             "label" : "Cameron Foster Audio Guide",
           },
         ],
+        "video" : [
+          {
+            "url" : "https://www.youtube.com/embed/1L8opaFtPCk",
+            "label" : "Urban Kultur",
+          },
+        ],
       },
       "geometry" : {
         "type" : "Point",
@@ -83,7 +89,16 @@ var muralData = {
             "transcript" : "FraserGray.pdf",
             "label" : "Fraser Gray on Leith Aquatic Mural",
           },
-
+        ],
+        "video" : [
+          {
+            "url" : "https://player.vimeo.com/video/83446593",
+            "label" : "Arts News",
+          },
+          {
+            "url" : "https://player.vimeo.com/video/72727555",
+            "label" : "Cagoule",
+          },
         ],
       },
 
@@ -193,20 +208,13 @@ var muralData = {
     {
       "type" : "Feature",
       "properties" : {
-        "name" : "Too Much Fun Club Mural",
-        "folder" : "TooMuchFun",
+        "name" : "Pilrig Park Mural",
+        "folder" : "PilrigPark",
         "artist" : "The Too Much Fun Club",
         "year" : "2017",
         "description" :
-            "<p>This colourful mural design was produced by artists Ross MacRae and Nem Sarton in collaboration with young people at Pilrig Park Special Secondary School and nearby Pilmeny Youth Centre, who took part in a series of workshops with the artists prior to its installation. The mural is situated on an adjoining wall of Pilrig Park Special Secondary School and the park. NO AUDIO YET. TRANSCRIPT MISSING.</p><p>Artist website: <a href='http://www.thetmfc.com/' target='_blank'>www.thetmfc.com</a>.</p>",
+            "<p>This colourful mural design was produced by artists Ross MacRae and Nem Sarton in collaboration with young people at Pilrig Park Special Secondary School and nearby Pilmeny Youth Centre, who took part in a series of workshops with the artists prior to its installation. The mural is situated on an adjoining wall of Pilrig Park Special Secondary School and the park.</p><p>Artist website: <a href='http://www.thetmfc.com/' target='_blank'>www.thetmfc.com</a>.</p>",
         "icon" : "mural",
-        "audio" : [
-          {
-            "file" : "CameronFoster.mp3",
-            "transcript" : "CameronFoster.pdf",
-            "label" : "Cameron Foster Audio Guide",
-          },
-        ]
       },
       "geometry" : {
         "type" : "Point",
@@ -222,6 +230,12 @@ var muralData = {
         "description" :
             "<p>Australian mural artist Guido van Helten here references archive photographic images, recreating them large-scale on the former Victoria India Rubber Mill. The characters depicted are from Edinburgh Festival production The Seven Deadly Sins in 1961. Another of Guido’s murals installed at the same time is still in situ at Out of the Blue Drill Hall on Dalmeny Street, depicting a survivor of the Gretna Train Disaster in his old age.</p><p>Artist website: <a href='https://www.guidovanhelten.com/' target='_blank'>www.guidovanhelten.com</a>.</p>",
         "icon" : "muralpast",
+        "video" : [
+          {
+            "url" : "https://www.youtube.com/embed/htVcO2D6rr8",
+            "label" : "TheEdinburghReporter",
+          },
+        ],
       },
       "geometry" : {
         "type" : "Point",
