@@ -101,9 +101,14 @@ muralData.features.forEach(function(mural, index){
   };
 
 //  imageHTML = "<a href='" + contentPath + "fullsize.jpg' target='_blank'>";
+
+// Trying to attach photo credit in an elegant way
+//  imageHTML = "<figure><figcaption style='color: #ffffff'>Rufus T. Firefly</figcaption>";
   imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";
   imageHTML += "Image of " + mural.properties.name;
   imageHTML += "'>";
+//  imageHTML += "</figure>";
+
 //  imageHTML += "'></a>";
 
   // Store the assembled content for live access

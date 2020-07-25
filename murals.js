@@ -9,7 +9,7 @@ var muralData = {
         "artist" : "Kirsty Whiten",
         "year" : "2015",
         "description" :
-            "<p>Kirsty Whiten’s Wronger Rites mural was commissioned as part of The Mural Project for the LeithLate15 festival, with associated temporary public art installations on Leith Walk opposite the former Edinburgh Printmakers and an exhibition at the former Whitespace gallery. In 2017 two thirds of the mural were sadly demolished, though the horse figure remains intact.</p><p>Artist website: <a href='https://www.kirstywhiten.com/' target='_blank'>www.kirstywhiten.com</a>.</p>",
+            "<p>Kirsty Whiten’s Wronger Rites mural was commissioned as part of The Mural Project for the LeithLate15 festival, with associated temporary public art installations on Leith Walk opposite the former Edinburgh Printmakers and an exhibition at the former Whitespace gallery. In 2017 two thirds of the mural were sadly demolished, though the horse figure remains intact.</p><p>Artist website: <a href='https://www.kirstywhiten.com/' target='_blank'>www.kirstywhiten.com</a>.</p><p>Photo: <a href='http://katgollock.com/' target='_blank'>Kat Gollock</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -37,7 +37,7 @@ var muralData = {
         "artist" : "Elph",
         "year" : "2016",
         "description" :
-            "<p>Originally brought in as a potential Shutter Project contributor, internationally recognised and Edinburgh-based graffiti artist Elph was instead offered the opportunity to install this untitled mural of an androgynous manga-like character on the corner of Lovella in 2016 as part of The Mural Project.</p><p>Artist website: <a href='http://akaelph.com/' target='_blank'>www.akaelph.com</a>.</p>",
+            "<p>Originally brought in as a potential Shutter Project contributor, internationally recognised and Edinburgh-based graffiti artist Elph was instead offered the opportunity to install this untitled mural of an androgynous manga-like character on the corner of Lovella in 2016 as part of The Mural Project.</p><p>Artist website: <a href='http://akaelph.com/' target='_blank'>www.akaelph.com</a>.</p><p>Photo: <a href='https://www.chrisdonia.co.uk/' target='_blank'>Chris Scott</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -66,7 +66,7 @@ var muralData = {
         "artist" : "Blameless Collective",
         "year" : "2013",
         "description" :
-            "<p>The Leith Aquatic was the first mural fundraised for and commissioned by LeithLate, as part of The Mural Project in 2013. It was produced by Blameless Collective through local community consultation and was also the first large-scale mural to be installed in Leith for almost three decades, kickstarting a new association with public art in the area. The mural launch in July 2013 included a street party for local residents with speeches, DJs and free daal courtesy of Sikh Sanjog.</p>",
+            "<p>The Leith Aquatic was the first mural fundraised for and commissioned by LeithLate, as part of The Mural Project in 2013. It was produced by Blameless Collective through local community consultation and was also the first large-scale mural to be installed in Leith for almost three decades, kickstarting a new association with public art in the area. The mural launch in July 2013 included a street party for local residents with speeches, DJs and free daal courtesy of Sikh Sanjog.</p><p>Photo: <a href='https://www.eoincareyphoto.com/' target='_blank'>Eoin Carey</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -115,7 +115,7 @@ var muralData = {
         "artist" : "Tom Ewing",
         "year" : "2013",
         "description" :
-            "<p>This mural was painted as a celebration of the history of both Leith and the Leith Dockers Club, and was unveiled by the author Irvine Welsh in early 2014. Although on private grounds, the mural is publicly available to view whenever the Leith Dockers Club is open.</p>",
+            "<p>This mural was painted as a celebration of the history of both Leith and the Leith Dockers Club, and was unveiled by the author Irvine Welsh in early 2014. Although on private grounds, the mural is publicly available to view whenever the Leith Dockers Club is open.</p><p>Photo: <a href='https://www.chrisdonia.co.uk/' target='_blank'>Chris Scott</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -138,7 +138,7 @@ var muralData = {
         "artist" : "Artists&rsquo; Collective / Tim Chalk",
         "year" : "1984",
         "description" :
-            "<p>This waterfront mural depicting seagulls and various nautical flags was painted in 1984 as part of an environmental project for Links View House, with the subject matter chosen by residents. The mural was accompanied by mosaic panels made by local children depicting Leith landmarks, installed along the front of the adjacent Leith Social Work Department building, now demolished.</p><p>Artist website: <a href='https://www.chalkworks.com/' target='_blank'>www.chalkworks.com</a>.</p>",
+            "<p>This waterfront mural depicting seagulls and various nautical flags was painted in 1984 as part of an environmental project for Links View House, with the subject matter chosen by residents. The mural was accompanied by mosaic panels made by local children depicting Leith landmarks, installed along the front of the adjacent Leith Social Work Department building, now demolished.</p><p>Artist website: <a href='https://www.chalkworks.com/' target='_blank'>www.chalkworks.com</a>.</p><p>Photo: <a href='https://www.chrisdonia.co.uk/' target='_blank'>Chris Scott</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -161,7 +161,7 @@ var muralData = {
         "artist" : "Russell Ian Dempster",
         "year" : "2014",
         "description" :
-            "<p>This mural launched in 2014 as part of The Mural Project and is a portrait of the artist Eduardo Paolozzi as a young man. Paolozzi was the forerunner of the Pop Art movement in Britain and was born in Leith in 1924. There are currently no examples of Paolozzi’s work on public display in Leith.</p>",
+            "<p>This mural launched in 2014 as part of The Mural Project and is a portrait of the artist Eduardo Paolozzi as a young man. Paolozzi was the forerunner of the Pop Art movement in Britain and was born in Leith in 1924. There are currently no examples of Paolozzi’s work on public display in Leith.</p><p>Photo: <a href='https://www.eoincareyphoto.com/' target='_blank'>Eoin Carey</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -169,7 +169,13 @@ var muralData = {
             "transcript" : "CameronFoster.pdf",
             "label" : "Cameron Foster Audio Guide",
           },
-        ]
+        ],
+        "video" : [
+          {
+            "url" : "https://www.youtube.com/embed/PzEqqn9h4sY",
+            "label" : "meltedBeetle Timelapse",
+          },
+        ],
       },
       "geometry" : {
         "type" : "Point",
@@ -213,7 +219,7 @@ var muralData = {
         "artist" : "The Too Much Fun Club",
         "year" : "2017",
         "description" :
-            "<p>This colourful mural design was produced by artists Ross MacRae and Nem Sarton in collaboration with young people at Pilrig Park Special Secondary School and nearby Pilmeny Youth Centre, who took part in a series of workshops with the artists prior to its installation. The mural is situated on an adjoining wall of Pilrig Park Special Secondary School and the park.</p><p>Artist website: <a href='http://www.thetmfc.com/' target='_blank'>www.thetmfc.com</a>.</p>",
+            "<p>This colourful mural design was produced by artists Ross MacRae and Nem Sarton in collaboration with young people at Pilrig Park Special Secondary School and nearby Pilmeny Youth Centre, who took part in a series of workshops with the artists prior to its installation. The mural is situated on an adjoining wall of Pilrig Park Special Secondary School and the park.</p><p>Artist website: <a href='http://www.thetmfc.com/' target='_blank'>www.thetmfc.com</a>.</p><p>Photo: <a href='https://www.chrisdonia.co.uk/' target='_blank'>Chris Scott</a>.</p>",
         "icon" : "mural",
       },
       "geometry" : {
@@ -250,7 +256,7 @@ var muralData = {
         "artist" : "David Wilkinson",
         "year" : "1986",
         "description" :
-            "<p>This mural referenced and was situated opposite the former Swanfield Flour Mill, of which there is now only one remaining original building still standing. It was painted to accompany other works at the entrance gates into what is now the Swanfield Industrial Estate, including the cast concrete corn sheaf, the metalwork archway and the painted archway on Great Junction Street, all of which are still in situ. The mural was sadly removed in 2016 due to deterioration.</p>",
+            "<p>This mural referenced and was situated opposite the former Swanfield Flour Mill, of which there is now only one remaining original building still standing. It was painted to accompany other works at the entrance gates into what is now the Swanfield Industrial Estate, including the cast concrete corn sheaf, the metalwork archway and the painted archway on Great Junction Street, all of which are still in situ. The mural was sadly removed in 2016 due to deterioration.</p><p>Photo: <a href='https://twitter.com/peteredinphoto' target='_blank'>Peter Stubbs</a>.</p>",
         "icon" : "muralpast",
       },
       "geometry" : {
@@ -266,7 +272,7 @@ var muralData = {
         "artist" : "Fraser Gray &amp; FIST",
         "year" : "2015",
         "description" :
-            "<p>This mural was installed as part of a community engagement project working with the older residents of nearby Croft an Righ sheltered housing complex. The design acts as a timeline for the development of the local area from its industrial heritage of local brewery chimneys, the nearby former Astoria music venue, local garages and most recently, student housing developments.</p><p>Artist website: <a href='http://www.ichbinfist.com/' target='_blank'>www.ichbinfist.com</a>.</p><p>Artist website: <a href='https://www.frasergray.com/' target='_blank'>www.frasergray.com</a>.</p>",
+            "<p>This mural was installed as part of a community engagement project working with the older residents of nearby Croft an Righ sheltered housing complex. The design acts as a timeline for the development of the local area from its industrial heritage of local brewery chimneys, the nearby former Astoria music venue, local garages and most recently, student housing developments.</p><p>Artist website: <a href='http://www.ichbinfist.com/' target='_blank'>www.ichbinfist.com</a>.</p><p>Artist website: <a href='https://www.frasergray.com/' target='_blank'>www.frasergray.com</a>.</p><p>Photo: <a href='http://katgollock.com/' target='_blank'>Kat Gollock</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
