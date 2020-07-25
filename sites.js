@@ -109,6 +109,7 @@ studioData.features.forEach(function(studio, index){
 
   // Build the HTML raw for jQuery performance reasons
   siteHTML = "<div id='sitename'>" + studio.properties.name + "</div>\n";
+  siteHTML += "<div id='address'>" + studio.properties.address + "</div>\n";
   siteHTML += "<div id='description'>" + studio.properties.description + "</div>\n";
 
   // There can be a variable number of video clips

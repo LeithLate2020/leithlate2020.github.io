@@ -128,7 +128,7 @@ var studioData = {
       "properties" : {
         "name" : "Coburg House",
         "folder" : "CoburgHouse",
-        "address" : "15 Coburg Street, Edinburgh, EH6 6ET",
+        "address" : "15 Coburg Street, Edinburgh EH6 6ET",
         "description" :
             "<p>Coburg House is a creative home for over 80 artists, makers and designers. This former granary has housed studios for nearly 20 years and is home to a dynamic creative community with a well-established reputation for excellence.  Coburg House offers a range of workshops and classes and has a gallery and shop open to the public every weekend.</p><p><a href='https://www.coburghouse.co.uk/' target='_blank'>https://www.coburghouse.co.uk/</a></p>",
         "icon" : "studio",
@@ -146,6 +146,31 @@ var studioData = {
       "geometry" : {
         "type" : "Point",
         "coordinates" : [-3.1743597,55.9761289],
+      }
+    },
+    {
+      "type" : "Feature",
+      "properties" : {
+        "name" : "Albion Business Centre",
+        "folder" : "AlbionBusiness",
+        "address" : "78 Albion Rd, Edinburgh EH7 5QZ",
+        "description" :
+            "<p>Albion Business Centre placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text placeholder text.</p><p><a href='https://www.leithlate.co.uk/' target='_blank'>https://www.leithlate.co.uk/</a></p>",
+        "icon" : "studio",
+        "video" : [
+          {
+            "url" : "https://player.vimeo.com/video/439256551",
+            "label" : "Brigid Collins",
+          },
+          {
+            "url" : "https://player.vimeo.com/video/439209456",
+            "label" : "Sharon Quigley",
+          },
+        ],
+      },
+      "geometry" : {
+        "type" : "Point",
+        "coordinates" : [-3.16377794,55.96100775],
       }
     },
   ]
