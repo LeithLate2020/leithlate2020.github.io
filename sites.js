@@ -100,16 +100,12 @@ muralData.features.forEach(function(mural, index){
     siteHTML += "</div>\n";
   };
 
-//  imageHTML = "<a href='" + contentPath + "fullsize.jpg' target='_blank'>";
-
 // Trying to attach photo credit in an elegant way
 //  imageHTML = "<figure><figcaption style='color: #ffffff'>Rufus T. Firefly</figcaption>";
   imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";
   imageHTML += "Image of " + mural.properties.name;
   imageHTML += "'>";
 //  imageHTML += "</figure>";
-
-//  imageHTML += "'></a>";
 
   // Store the assembled content for live access
   muralContentPath[index] = contentPath;
@@ -159,12 +155,6 @@ studioData.features.forEach(function(studio, index){
 //      siteHTML += "Your browser does not support the video element.</video>";
 //      siteHTML += "</div>\n";
 
-
-      // Each clip should have a transcript in PDF
-//      siteHTML += "<div class='transcript'>";
-//      siteHTML += "[<a href='" + contentPath + clip.transcript;
-//      siteHTML += "'>transcript</a>]</div>\n";
-//      siteHTML += "</div>\n";
     })
   };
 
@@ -250,6 +240,53 @@ map.on('load', function (e) {
     }
   });
 
+  ///////////////////////////////////////////////////////////////////////////
+  // Build mouseover popups for murals
+  map.on('mouseenter', 'murals', function(e) {
+    let coordinates = e.features[0].geometry.coordinates.slice();
+    let name = e.features[0].properties.name;
+
+    // Create a popup, but don't add it to the map yet.
+    let popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false,
+    });
+
+    // Populate the popup and set its coordinates
+    popup
+      .setLngLat(coordinates)
+      .setHTML(name)
+      .addTo(map);
+
+    // Have it disappear when the mouse leaves
+    map.on('mouseleave', 'murals', function() {
+      popup.remove();
+    });
+  });
+
+  // Build mouseover popups for studios
+  map.on('mouseenter', 'studios', function(e) {
+    let coordinates = e.features[0].geometry.coordinates.slice();
+    let name = e.features[0].properties.name;
+
+    // Create a popup, but don't add it to the map yet.
+    let popup = new mapboxgl.Popup({
+      closeButton: false,
+      closeOnClick: false,
+    });
+
+    // Populate the popup and set its coordinates
+    popup
+      .setLngLat(coordinates)
+      .setHTML(name)
+      .addTo(map);
+
+    // Have it disappear when the mouse leaves
+    map.on('mouseleave', 'studios', function() {
+      popup.remove();
+    });
+  });
+
 
 // Looks like label properties are set per layer so this won't work on a single site
 //  map.on('mousemove', 'murals', function(e) {
@@ -260,6 +297,7 @@ map.on('load', function (e) {
 //    );
 //  });
 
+  /////////////////////////////////////////////////////////////////////////////
   // When user clicks on a map feature, open the content
   map.on('click', 'murals', function(e) {
     let siteId = e.features[0].properties.id;
@@ -321,11 +359,6 @@ map.on('load', function (e) {
   });
 
 });
-
-
-
-//    var coordinates = e.features[0].geometry.coordinates.slice();
-//    var description = e.features[0].properties.description;
 
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears
