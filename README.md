@@ -34,12 +34,12 @@ Once you've put your media in a new content folder, you need to add a new featur
     {
       "type" : "Feature",
       "properties" : {
-        "name" : "Leith History Mural",
-        "folder" : "LeithHistory",
-        "artist" : "Tim Chalk and Paul Grime",
-        "year" : "1985",
+        "name" : "Leith Aquatic Mural",
+        "folder" : "LeithAquatic",
+        "artist" : "Blameless Collective",
+        "year" : "2013",
         "description" :
-          "<p>The mural artwork was based on a series of workshops run with local people during 1985, referencing key points in Leith’s history and a depiction of the area at the time. Its original title was Moving into the future with a stronger community, exemplified by the last &lsquo;puzzle piece&rsquo; on the bottom right hand side of the mural.</p>",
+          "<p>The Leith Aquatic was the first mural fundraised for and commissioned by LeithLate, as part of The Mural Project in 2013. It was produced by Blameless Collective through local community consultation and was also the first large-scale mural to be installed in Leith for almost three decades, kickstarting a new association with public art in the area. The mural launch in July 2013 included a street party for local residents with speeches, DJs and free daal courtesy of Sikh Sanjog.</p><p>Photo: <a href='https://www.eoincareyphoto.com/' target='_blank'>Eoin Carey</a>.</p>",
         "icon" : "mural",
         "audio" : [
           {
@@ -48,23 +48,45 @@ Once you've put your media in a new content folder, you need to add a new featur
             "label" : "Cameron Foster Audio Guide",
           },
           {
-            "file" : "TimChalk.mp3",
-            "transcript" : "TimChalk.pdf",
-            "label" : "Tim Chalk on Leith History Mural",
+            "file" : "RabiyaChoudhry.mp3",
+            "transcript" : "RabiyaChoudhry.pdf",
+            "label" : "Rabiya Choudhry on Leith Aquatic Mural",
           },
-        ]
+          {
+            "file" : "RichieCumming.mp3",
+            "transcript" : "RichieCumming.pdf",
+            "label" : "Richie Cumming on Leith Aquatic Mural",
+          },
+          {
+            "file" : "FraserGray.mp3",
+            "transcript" : "FraserGray.pdf",
+            "label" : "Fraser Gray on Leith Aquatic Mural",
+          },
+        ],
+        "video" : [
+          {
+            "url" : "https://player.vimeo.com/video/83446593",
+            "label" : "Arts News",
+          },
+          {
+            "url" : "https://player.vimeo.com/video/72727555",
+            "label" : "Cagoule",
+          },
+        ],
       },
+
       "geometry" : {
         "type" : "Point",
-        "coordinates" : [-3.179364314,55.97573747],
+        "coordinates" : [-3.170161848,55.9678748],
       }
     },
+
 
 It's hopefully self-explanatory. Notice a few things:
 
 * that's HTML code inside the description;
 * there can be a variable number of audio clips. Each has file/transcript/label inside curly brackets, but the entire list of clips is inside *square* brackets, to show it's a list;
-* video is added just like audio, in a separate list of video clips &mdash; but we specify url/label instead of file/transcript/label;
+* video is configured like audio, in a separate list of video clips &mdash; but we specify url/label instead of file/transcript/label. The Vimeo URL (web address) needs to mention *player* or the link won't work;
 * the new code block has to go immediately after or before the code block for another feature, because it's part of a *list of features.* Look for the square brackets around that list if you want to understand the format better;
 * remember to update the GPS coordinates.
 
@@ -76,4 +98,4 @@ Mural images are stored in their original size (fullsize.jpg) and reduced to 120
 
 Quick recipe for converting WAV files:
 
-    ffmpeg -i RitchieCumming.wav RichieCumming.mp3
+    ffmpeg -i RichieCumming.wav RichieCumming.mp3
