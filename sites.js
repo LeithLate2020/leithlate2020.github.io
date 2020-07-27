@@ -90,11 +90,9 @@ muralData.features.forEach(function(mural, index){
       siteHTML += "<div class='videoclip'>\n";
       siteHTML += "<div class='videolabel'>" + clip.label + "</div>\n";
 
-// This is the actual video embed code, commented out whilst the videos are private
+      // Embed videos using Vimeo or YouTube player
       siteHTML += "<iframe src='" + clip.url + "' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>\n";
 
-      // This is not the actual video but a Paolozzi placeholder
-//      siteHTML += "<iframe src='https://player.vimeo.com/video/31835579' frameborder='0' allow='autoplay; fullscreen' width='100%' height='100%' allowfullscreen></iframe>\n";
       siteHTML += "</div>\n";
     });
     siteHTML += "</div>\n";
@@ -136,8 +134,7 @@ studioData.features.forEach(function(studio, index){
       siteHTML += "<div class='videoclip'>\n";
       siteHTML += "<div class='videolabel'>" + clip.label + "</div>\n";
 
-
-// This is the actual video embed code, commented out whilst the videos are private
+      // Embed videos using Vimeo or YouTube player
       siteHTML += "<iframe src='" + clip.url + "' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>\n";
 
       // Use native player
@@ -282,16 +279,6 @@ map.on('load', function (e) {
       popup.remove();
     });
   });
-
-
-// Looks like label properties are set per layer so this won't work on a single site
-//  map.on('mousemove', 'murals', function(e) {
-//    let siteId = e.features[0].properties.id;
-//    let siteName = e.features[0].properties.name;
-//    console.log(siteId);
-//    map.setLayoutProperty('murals', 'text-field', siteName);
-//    );
-//  });
 
   /////////////////////////////////////////////////////////////////////////////
   // When user clicks on a map feature, open the content
