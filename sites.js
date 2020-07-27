@@ -138,11 +138,7 @@ studioData.features.forEach(function(studio, index){
 
 
 // This is the actual video embed code, commented out whilst the videos are private
-//      siteHTML += "<iframe src='" + clip.url + "' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>\n;"
-
-      // This is not the actual video but a Paolozzi placeholder
-      siteHTML += "<iframe src='https://player.vimeo.com/video/31835579' frameborder='0' allow='autoplay; fullscreen' width='100%' height='100%' allowfullscreen></iframe>\n";
-      siteHTML += "</div>\n";
+      siteHTML += "<iframe src='" + clip.url + "' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>\n";
 
       // Use native player
 //      siteHTML += "<video controls>";
