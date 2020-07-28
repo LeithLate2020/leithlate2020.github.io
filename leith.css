@@ -33,7 +33,7 @@ body {
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  border-bottom: 1px solid black;
+/*  border-bottom: 1px solid black; */
 }
 
 #mapcontainer {
