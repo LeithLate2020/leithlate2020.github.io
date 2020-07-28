@@ -155,7 +155,7 @@ var studioData = {
         "folder" : "AlbionBusiness",
         "address" : "78 Albion Rd, Edinburgh EH7 5QZ",
         "description" :
-            "<p>Albion Business Centre is made up of a cluster of units in a series of former Victorian industrial buildings, situated right next door to Hibernian Football ground at Easter Road. The space is home to a series of artisan companies, artists and makers that include Albion Road Wasps Studios, 3D/2D artist fairs and Mellis Cheese. The LeithLate office is based in Unit 3 of Albion Business Centre.</p><p>Photo: <a href='https://bridgefilms.co.uk/' target='_blank'>Juan Martos</a>.</p>",
+            "<p>Albion Business Centre is made up of a cluster of units in a series of former Victorian industrial buildings, situated right next door to Hibernian Football ground at Easter Road. The space is home to a series of artisan companies, artists and makers that include Albion Road Wasps Studios, 3D/2D artist fairs and Mellis Cheese. The LeithLate office is based in Unit 3 of Albion Business Centre.</p><p>Photo: <a href='https://bridgefilms.co.uk/' target='_blank'>Juan Martos</a></p>",
         "icon" : "studio",
         "video" : [
           {
