@@ -26,9 +26,12 @@ mapboxgl.accessToken =
 
 var map = new mapboxgl.Map({
     container: 'mapcontainer',
-    style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+//    style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+    style: 'mapbox://styles/leithlate/ckcm2467f17vb1is46bz3uozl', // Melisa's custom stylesheet
     center: [-3.162, 55.966], // starting position [lng, lat]
     zoom: 13.2, // starting zoom
+    maxZoom: 16,
+    minZoom: 12,
 });
 
 /////////////////////////////////////////////////////////////////////////////
