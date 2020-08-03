@@ -29,7 +29,7 @@ var map = new mapboxgl.Map({
 //    style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
     style: 'mapbox://styles/leithlate/ckcm2467f17vb1is46bz3uozl', // Melisa's custom stylesheet
     center: [-3.162, 55.966], // starting position [lng, lat]
-    zoom: 13.2, // starting zoom
+    zoom: 12.5, // starting zoom
     maxZoom: 16,
     minZoom: 12,
 });
@@ -59,7 +59,8 @@ muralData.features.forEach(function(mural, index){
   mural.properties.id = index;
 
   // Build the HTML raw for jQuery performance reasons
-  siteHTML = "<div id='sitename'>" + mural.properties.name + "</div>\n";
+  siteHTML = "<div id='close'><img src='icons/cancel_s.png' width='32'></div>\n";
+  siteHTML += "<div id='sitename'>" + mural.properties.name + "</div>\n";
   siteHTML += "<div id='artist'>" + mural.properties.artist + "</div>\n";
   if (mural.properties.year) {
     siteHTML += "<div id='year'>" + mural.properties.year + "</div>\n";
@@ -127,7 +128,8 @@ studioData.features.forEach(function(studio, index){
   studio.properties.id = index;
 
   // Build the HTML raw for jQuery performance reasons
-  siteHTML = "<div id='sitename'>" + studio.properties.name + "</div>\n";
+  siteHTML = "<div id='close'><img src='icons/cancel_s.png' width='32'></div>\n";
+  siteHTML += "<div id='sitename'>" + studio.properties.name + "</div>\n";
 // They don't want addresses any more
 //  siteHTML += "<div id='address'>" + studio.properties.address + "</div>\n";
   siteHTML += "<div id='description'>" + studio.properties.description + "</div>\n";
@@ -172,7 +174,7 @@ function openContent() {
   $("#sidebar").css("display","block");
   $("#content").css("display","flex");
   $("#overlay").css("display","block");
-  $("#close").css("display","block");
+  //$("#close").css("display","block");
 };
 
 // Close site content by hiding the respective blocks
@@ -180,7 +182,7 @@ function closeContent() {
   $("#sidebar").css("display","none");
   $("#content").css("display","none");
   $("#overlay").css("display","none");
-  $("#close").css("display","none");
+  //$("#close").css("display","none");
 }
 
 /////////////////////////////////////////////////////////////////////////////
