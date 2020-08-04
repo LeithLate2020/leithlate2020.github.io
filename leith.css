@@ -34,6 +34,7 @@ body {
   justify-content: left;
   align-items: center;
 /*  border-bottom: 1px solid black; */
+  padding-right: 15px;
 }
 
 #mapcontainer {
@@ -222,7 +223,22 @@ audio, video {
     height: 100%;
 }
 
+/*make title look 'active' (reset map function)*/
 #virtualtours
 {
   cursor: pointer;
+}
+
+/* map legend */
+.map-overlay {
+  position: absolute;
+  /*bottom: 0;*/
+  /*right: 0;*/
+  bottom: 35px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  /*margin-right: 20px;*/
+  /*font-family: Arial, sans-serif;*/
+  /*overflow: auto;*/
+  /*border-radius: 3px;*/
 }
