@@ -355,3 +355,11 @@ map.on('load', function (e) {
 //    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
 //      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
 //    }
+
+//function to reset map
+$("#virtualtours").click(function(){
+  map.flyTo({
+    center: [-3.162, 55.966], // starting position [lng, lat]
+    zoom: 12.5 // starting zoom
+  })
+});
