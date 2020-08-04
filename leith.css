@@ -232,13 +232,12 @@ audio, video {
 /* map legend */
 .map-overlay {
   position: absolute;
-  /*bottom: 0;*/
-  /*right: 0;*/
   bottom: 35px;
   left: 12px;
   background: rgba(255, 255, 255, 0.6);
-  /*margin-right: 20px;*/
-  /*font-family: Arial, sans-serif;*/
-  /*overflow: auto;*/
-  /*border-radius: 3px;*/
+}
+
+#streetview
+{
+  text-align: center;
 }

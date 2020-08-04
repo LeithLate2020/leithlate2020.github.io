@@ -39,6 +39,7 @@ var muralData = {
         "description" :
             "<p>Originally brought in as a potential Shutter Project contributor, internationally recognised and Edinburgh-based graffiti artist Elph was instead offered the opportunity to install this untitled mural of an androgynous manga-like character on the corner of Lovella in 2016 as part of The Mural Project.</p><p>Artist website: <a href='http://akaelph.com/' target='_blank'>www.akaelph.com</a></p><p>Photo: <a href='https://www.chrisdonia.co.uk/' target='_blank'>Chris Scott</a></p>",
         "icon" : "mural",
+        "streetview" : "https://www.google.com/maps/@55.9685779,-3.173484,3a,73.7y,90t/data=!3m7!1e1!3m5!1sAF1QipNkeokaAnI3ebW9rhZRWHOHn7MfoffVAmsUlV4u!2e10!3e12!7i11000!8i5500",
         "audio" : [
           {
             "file" : "CameronFoster.mp3",
@@ -68,6 +69,7 @@ var muralData = {
         "description" :
             "<p>The Leith Aquatic was the first mural fundraised for and commissioned by LeithLate, as part of The Mural Project in 2013. It was produced by Blameless Collective through local community consultation and was also the first large-scale mural to be installed in Leith for almost three decades, kickstarting a new association with public art in the area. The mural launch in July 2013 included a street party for local residents with speeches, DJs and free daal courtesy of Sikh Sanjog.</p><p>Photo: <a href='https://www.eoincareyphoto.com/' target='_blank'>Eoin Carey</a></p>",
         "icon" : "mural",
+        "streetview" : "https://www.google.com/maps/@55.9679861,-3.1702087,0a,101.4y,90t/data=!3m4!1e1!3m2!1sw0hvkROFxoji6hAoFYx2gg!2e0?source=apiv3",
         "audio" : [
           {
             "file" : "CameronFoster.mp3",
@@ -117,6 +119,7 @@ var muralData = {
         "description" :
             "<p>This mural was painted as a celebration of the history of both Leith and the Leith Dockers Club, and was unveiled by the author Irvine Welsh in early 2014. Although on private grounds, the mural is publicly available to view whenever the Leith Dockers Club is open.</p><p>Photo: <a href='https://www.chrisdonia.co.uk/' target='_blank'>Chris Scott</a></p>",
         "icon" : "mural",
+        "streetview" : "https://www.google.com/maps/@55.9706558,-3.1698582,0a,101.4y,90t/data=!3m4!1e1!3m2!1sF-v3m3d5Qm8VA89JeHz1Nw!2e0?source=apiv3",
         "audio" : [
           {
             "file" : "CameronFoster.mp3",
@@ -140,6 +143,7 @@ var muralData = {
         "description" :
             "<p>This waterfront mural depicting seagulls and various nautical flags was painted in 1984 as part of an environmental project for Links View House, with the subject matter chosen by residents. The mural was accompanied by mosaic panels made by local children depicting Leith landmarks, installed along the front of the adjacent Leith Social Work Department building, now demolished.</p><p>Artist website: <a href='https://www.chalkworks.com/' target='_blank'>www.chalkworks.com</a></p><p>Photo: <a href='https://www.chrisdonia.co.uk/' target='_blank'>Chris Scott</a></p>",
         "icon" : "mural",
+        "streetview" : "https://www.google.com/maps/@55.9737202,-3.1706321,3a,73.7y,218.75h,110.12t/data=!3m7!1e1!3m5!1sAF1QipMJmRxH1EseELuwWsLAWaclPLV0S5zZCUIcBD61!2e10!3e12!7i8704!8i4352",
         "audio" : [
           {
             "file" : "CameronFoster.mp3",
@@ -163,6 +167,7 @@ var muralData = {
         "description" :
             "<p>This mural launched in 2014 as part of The Mural Project and is a portrait of the artist Eduardo Paolozzi as a young man. Paolozzi was the forerunner of the Pop Art movement in Britain and was born in Leith in 1924. There are currently no examples of Paolozzi’s work on public display in Leith.</p><p>Photo: <a href='https://www.eoincareyphoto.com/' target='_blank'>Eoin Carey</a></p>",
         "icon" : "mural",
+        "streetview" : "https://www.google.com/maps/@55.974551,-3.1720609,0a,73.7y,90t/data=!3m4!1e1!3m2!1szXSxSwbhdc6eT7Jzbc9qug!2e0?source=apiv3",
         "audio" : [
           {
             "file" : "CameronFoster.mp3",
@@ -192,6 +197,7 @@ var muralData = {
         "description" :
             "<p>The mural artwork was based on a series of workshops run with local people during 1985, referencing key points in Leith’s history and a depiction of the area at the time. Its original title was Moving into the future with a stronger community, exemplified by the last &lsquo;puzzle piece&rsquo; on the bottom right hand side of the mural.</p>",
         "icon" : "mural",
+        "streetview" : "https://www.google.com/maps/@55.9757257,-3.1790724,0a,101.4y,276.9h,83.89t/data=!3m4!1e1!3m2!1sHSZWXrXz_GmTNNaTB3HJQg!2e0?source=apiv3",
         "audio" : [
           {
             "file" : "CameronFoster.mp3",
@@ -274,6 +280,7 @@ var muralData = {
         "description" :
             "<p>This mural was installed as part of a community engagement project working with the older residents of nearby Croft an Righ sheltered housing complex. The design acts as a timeline for the development of the local area from its industrial heritage of local brewery chimneys, the nearby former Astoria music venue, local garages and most recently, student housing developments.</p><p>Artist website: <a href='http://www.ichbinfist.com/' target='_blank'>www.ichbinfist.com</a></p><p>Artist website: <a href='https://www.frasergray.com/' target='_blank'>www.frasergray.com</a></p><p>Photo: <a href='http://katgollock.com/' target='_blank'>Kat Gollock</a></p>",
         "icon" : "mural",
+        "streetview" : "https://www.google.com/maps/@55.9549236,-3.1727936,3a,75y,64.27h,87.88t/data=!3m7!1e1!3m5!1sp9JAxOf9MMmUrvHeRwDFtw!2e0!3e11!7i13312!8i6656",
       },
       "geometry" : {
         "type" : "Point",

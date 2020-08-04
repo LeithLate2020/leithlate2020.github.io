@@ -102,6 +102,12 @@ muralData.features.forEach(function(mural, index){
     siteHTML += "</div>\n";
   };
 
+  //Google streetview link for murals
+  if (mural.properties.streetview)
+  {
+      siteHTML += "<div id='streetview'>" + "<a href='" + mural.properties.streetview + "'>Google Street View" + "</a></div>\n";
+  }
+
 // Trying to attach photo credit in an elegant way
 //  imageHTML = "<figure><figcaption style='color: #ffffff'>Rufus T. Firefly</figcaption>";
   imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";
