@@ -11,6 +11,7 @@ var muralData = {
         "description" :
             "<p>Kirsty Whiten’s Wronger Rites mural was commissioned as part of The Mural Project for the LeithLate15 festival, with associated temporary public art installations on Leith Walk opposite the former Edinburgh Printmakers and an exhibition at the former Whitespace gallery. In 2017 two thirds of the mural were sadly demolished, though the horse figure remains intact.</p><p>Artist website: <a href='https://www.kirstywhiten.com/' target='_blank'>www.kirstywhiten.com</a></p><p>Photo: <a href='http://katgollock.com/' target='_blank'>Kat Gollock</a></p>",
         "icon" : "mural",
+        "streetview" : "https://www.google.com/maps/@55.964873,-3.1744184,3a,73.7y,90t/data=!3m6!1e1!3m4!1sABxyegD6pQf0P_tNnsrZuA!2e0!7i16384!8i8192",
         "audio" : [
           {
             "file" : "CameronFoster.mp3",

@@ -28,8 +28,8 @@ var map = new mapboxgl.Map({
     container: 'mapcontainer',
 //    style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
     style: 'mapbox://styles/leithlate/ckcm2467f17vb1is46bz3uozl', // Melisa's custom stylesheet
-    center: [-3.162, 55.966], // starting position [lng, lat]
-    zoom: 12.5, // starting zoom
+    center: [-3.167, 55.965], // starting position [lng, lat]
+    zoom: 12.8, // starting zoom
     maxZoom: 16,
     minZoom: 12,
 });
@@ -219,9 +219,11 @@ map.on('load', function (e) {
       "data": muralData,
     },
     'layout': {
+      'icon-allow-overlap' : true,
+      'text-allow-overlap': true,
       'icon-image': '{icon}',
       'icon-size': 0.25,
-      'icon-allow-overlap': false,
+      'icon-allow-overlap': true,
 //      'text-field': '{name}',
 //      'text-size' : 14,
 //      'text-anchor': 'top',
@@ -241,7 +243,7 @@ map.on('load', function (e) {
     'layout': {
       'icon-image': '{icon}',
       'icon-size': 0.25,
-      'icon-allow-overlap': false,
+      'icon-allow-overlap': true,
     }
   });
 
