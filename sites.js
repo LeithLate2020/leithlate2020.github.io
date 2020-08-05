@@ -248,51 +248,57 @@ map.on('load', function (e) {
   });
 
   ///////////////////////////////////////////////////////////////////////////
-  // Build mouseover popups for murals
-  map.on('mouseenter', 'murals', function(e) {
-    let coordinates = e.features[0].geometry.coordinates.slice();
-    let name = e.features[0].properties.name;
+  // Build mouseover popups for murals (disable for touchscreens)
+  if (!('ontouchstart' in window)) {
 
-    // Create a popup, but don't add it to the map yet.
-    let popup = new mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false,
+    map.on('mouseenter', 'murals', function(e) {
+
+      let coordinates = e.features[0].geometry.coordinates.slice();
+      let name = e.features[0].properties.name;
+
+      // Create a popup, but don't add it to the map yet.
+      let popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false,
+      });
+
+      // Populate the popup and set its coordinates
+      popup
+        .setLngLat(coordinates)
+        .setHTML(name)
+        .addTo(map);
+
+      // Have it disappear when the mouse leaves
+      map.on('mouseleave', 'murals', function() {
+        popup.remove();
+      });
     });
 
-    // Populate the popup and set its coordinates
-    popup
-      .setLngLat(coordinates)
-      .setHTML(name)
-      .addTo(map);
 
-    // Have it disappear when the mouse leaves
-    map.on('mouseleave', 'murals', function() {
-      popup.remove();
+    // Build mouseover popups for studios
+    map.on('mouseenter', 'studios', function(e) {
+      let coordinates = e.features[0].geometry.coordinates.slice();
+      let name = e.features[0].properties.name;
+
+      // Create a popup, but don't add it to the map yet.
+      let popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false,
+      });
+
+      // Populate the popup and set its coordinates
+      popup
+        .setLngLat(coordinates)
+        .setHTML(name)
+        .addTo(map);
+
+      // Have it disappear when the mouse leaves
+      map.on('mouseleave', 'studios', function() {
+        popup.remove();
+      });
     });
-  });
 
-  // Build mouseover popups for studios
-  map.on('mouseenter', 'studios', function(e) {
-    let coordinates = e.features[0].geometry.coordinates.slice();
-    let name = e.features[0].properties.name;
-
-    // Create a popup, but don't add it to the map yet.
-    let popup = new mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false,
-    });
-
-    // Populate the popup and set its coordinates
-    popup
-      .setLngLat(coordinates)
-      .setHTML(name)
-      .addTo(map);
-
-    // Have it disappear when the mouse leaves
-    map.on('mouseleave', 'studios', function() {
-      popup.remove();
-    });
-  });
+  }
 
   /////////////////////////////////////////////////////////////////////////////
   // When user clicks on a map feature, open the content
@@ -367,7 +373,7 @@ map.on('load', function (e) {
 //function to reset map
 $("#virtualtours").click(function(){
   map.flyTo({
-    center: [-3.162, 55.966], // starting position [lng, lat]
-    zoom: 12.5 // starting zoom
+    center: [-3.167, 55.965], // starting position [lng, lat]
+    zoom: 12.8 // starting zoom
   })
 });
