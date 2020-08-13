@@ -9,7 +9,7 @@ var studioFolder = 'studios';
 var muralDataFile = 'murals.json';
 var studioDataFile = 'studios.json';
 
-// Melisa's custom icons -- converted to PNG because SVG doesn't work
+// custom icons -- converted to PNG because SVG doesn't work
 var muralIconFile = 'icons/triangle-15.png';
 var muralPastIconFile = 'icons/triangle-stroked-15.png';
 var studioIconFile = 'icons/cemetery-JP-15.png';
@@ -17,17 +17,13 @@ var studioIconFile = 'icons/cemetery-JP-15.png';
 /////////////////////////////////////////////////////////////////////////////
 // Mapbox configuration
 
-// This is Melisa's map -- CHANGEME
-// mapboxgl.accessToken = 'pk.eyJ1IjoibWVsaXNhcGF6IiwiYSI6ImNrOXdqdWRtdDA5aTkzZ3VoYXhramNyZjgifQ.V3kNFUghK_8qlcj5ac_WPQ';
-
 // This is the map from leithlatetours@gmail.com
 mapboxgl.accessToken =
 'pk.eyJ1IjoibGVpdGhsYXRlIiwiYSI6ImNrY20xZGY0NzJheDUyem54M3h4c2h6MncifQ.8T4JjPlNUOfwVvpXVTyVIw';
 
 var map = new mapboxgl.Map({
     container: 'mapcontainer',
-//    style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
-    style: 'mapbox://styles/leithlate/ckcm2467f17vb1is46bz3uozl', // Melisa's custom stylesheet
+    style: 'mapbox://styles/leithlate/ckcm2467f17vb1is46bz3uozl', //custom stylesheet
     center: [-3.167, 55.965], // starting position [lng, lat]
     zoom: 12.8, // starting zoom
     maxZoom: 16,
@@ -108,12 +104,9 @@ muralData.features.forEach(function(mural, index){
       siteHTML += "<div id='streetview'>" + "<a href='" + mural.properties.streetview + "'>Google Street View" + "</a></div>\n";
   }
 
-// Trying to attach photo credit in an elegant way
-//  imageHTML = "<figure><figcaption style='color: #ffffff'>Rufus T. Firefly</figcaption>";
   imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";
   imageHTML += "Image of " + mural.properties.name;
   imageHTML += "'>";
-//  imageHTML += "</figure>";
 
   // Store the assembled content for live access
   muralContentPath[index] = contentPath;
@@ -136,8 +129,6 @@ studioData.features.forEach(function(studio, index){
   // Build the HTML raw for jQuery performance reasons
   siteHTML = "<div id='close'><img src='icons/cancel_s.png' width='32'></div>\n";
   siteHTML += "<div id='sitename'>" + studio.properties.name + "</div>\n";
-// They don't want addresses any more
-//  siteHTML += "<div id='address'>" + studio.properties.address + "</div>\n";
   siteHTML += "<div id='description'>" + studio.properties.description + "</div>\n";
 
   // There can be a variable number of video clips
@@ -148,17 +139,6 @@ studioData.features.forEach(function(studio, index){
 
       // Embed videos using Vimeo or YouTube player
       siteHTML += "<iframe src='" + clip.url + "' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>\n";
-
-      // Use native player
-//      siteHTML += "<video controls>";
-//      siteHTML += "<source src='" + contentPath + clip.file;
-//      siteHTML += "' type='video/mp4'>";
-//      if (clip.subtitles) {
-//        siteHTML += "<track label='English' kind='subtitles' srclang='en' src='";
-//        siteHTML += contentPath + clip.subtitles + "' default>";
-//      }
-//      siteHTML += "Your browser does not support the video element.</video>";
-//      siteHTML += "</div>\n";
 
     })
   };
@@ -180,7 +160,6 @@ function openContent() {
   $("#sidebar").css("display","block");
   $("#content").css("display","flex");
   $("#overlay").css("display","block");
-  //$("#close").css("display","block");
 };
 
 // Close site content by hiding the respective blocks
@@ -188,7 +167,6 @@ function closeContent() {
   $("#sidebar").css("display","none");
   $("#content").css("display","none");
   $("#overlay").css("display","none");
-  //$("#close").css("display","none");
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -224,10 +202,6 @@ map.on('load', function (e) {
       'icon-image': '{icon}',
       'icon-size': 0.25,
       'icon-allow-overlap': true,
-//      'text-field': '{name}',
-//      'text-size' : 14,
-//      'text-anchor': 'top',
-//      'text-offset': [0,0.7],
     }
   });
 
@@ -362,13 +336,6 @@ map.on('load', function (e) {
   });
 
 });
-
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-//    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-//      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-//    }
 
 //function to reset map
 $("#virtualtours").click(function(){
