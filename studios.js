@@ -90,10 +90,10 @@ var studioData = {
         "video" : [
           {
             "url" : "https://player.vimeo.com/video/439256626",
-            "label" : "Judy Clark",
+            "label" : "Judy R Clark",
           },
           {
-            "url" : "https://player.vimeo.com/video/439256640",
+            "url" : "https://player.vimeo.com/video/439256606",
             "label" : "Helen Miles",
           },
         ],
