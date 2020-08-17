@@ -77,7 +77,7 @@ muralData.features.forEach(function(mural, index){
       // Each clip should have a transcript in PDF
       siteHTML += "<div class='transcript'>";
       siteHTML += "[<a href='" + contentPath + clip.transcript;
-      siteHTML += "'>transcript</a>]</div>\n";
+      siteHTML += "' target='_blank'>transcript</a>]</div>\n";
       siteHTML += "</div>\n";
     });
     siteHTML += "</div>\n";
@@ -101,7 +101,7 @@ muralData.features.forEach(function(mural, index){
   //Google streetview link for murals
   if (mural.properties.streetview)
   {
-      siteHTML += "<div id='streetview'>" + "<a href='" + mural.properties.streetview + "'>Google Street View" + "</a></div>\n";
+      siteHTML += "<div id='streetview'>" + "<a href='" + mural.properties.streetview + "' target='_blank'>Google Street View" + "</a></div>\n";
   }
 
   imageHTML = "<img src='" + contentPath + "feature.jpg' id='featureimage' alt='";
