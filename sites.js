@@ -37,7 +37,9 @@ var studioContentPath = [];
 
 // An array of jQuery objects with the sidebar HTML content for each site
 var muralContent = [];
+var muralList = [];
 var studioContent = [];
+var studioList = [];
 
 // An array of jQuery objects with the image HTML content for each site
 var muralImage = [];
@@ -115,6 +117,36 @@ muralData.features.forEach(function(mural, index){
 
 });
 
+// Prebuild list of murals
+// Build up complete sidebar content in listHTML
+let muralListHTML;
+
+muralListHTML = "<div id='closeList'><img src='icons/cancel_s.png' width='32'></div><br/><br/><br/>\n";
+
+muralData.features.forEach(function(mural, index)
+{
+  //Build the HTML raw for jQuery performance reasons
+  let muralHTMLName = mural.properties.name.replace(/ /g, "&nbsp;");
+  muralListHTML += "<div id=sitenameList onclick=panMap(" + mural.geometry.coordinates[1] + "," + mural.geometry.coordinates[0] + ",";
+  muralListHTML += "'";
+  muralListHTML += muralHTMLName;
+  muralListHTML += "'";
+  muralListHTML += ")>";
+  if (mural.properties.icon === "mural")
+  {
+    muralListHTML += "<img src='" + muralIconFile + "'>&nbsp";
+  }
+  else if (mural.properties.icon === "muralpast")
+  {
+    muralListHTML += "<img src='" + muralPastIconFile + "'>&nbsp;";
+  }
+  muralListHTML += mural.properties.name + "</div>\n";
+  muralListHTML += "<div id=detailsList onClick=openMuralDetails(" + mural.properties.id + ")>Details</div>";
+  muralListHTML += "<hr/>\n";
+});
+
+muralList = muralListHTML;
+
 /////////////////////////////////////////////////////////////////////////////
 // Prebuild content for each studio on the map
 studioData.features.forEach(function(studio, index){
@@ -154,6 +186,29 @@ studioData.features.forEach(function(studio, index){
 
 });
 
+// Prebuild list of studios
+// Build up complete sidebar content in listHTML
+let studioListHTML;
+
+studioListHTML = "<div id='closeList'><img src='icons/cancel_s.png' width='32'></div><br/><br/><br/>\n";
+
+studioData.features.forEach(function(studio, index)
+{
+  // Build the HTML raw for jQuery performance reasons
+  let studioHTMLName = studio.properties.name.replace(/ /g, "&nbsp;");
+  studioListHTML += "<div id=sitenameList onclick=panMap(" + studio.geometry.coordinates[1] + "," + studio.geometry.coordinates[0] + ",";
+  studioListHTML += "'";
+  studioListHTML += studioHTMLName;
+  studioListHTML += "'";
+  studioListHTML += ")>";
+  studioListHTML += "<img src='" + studioIconFile + "'>&nbsp";
+  studioListHTML += studio.properties.name + "</div>\n";
+  studioListHTML += "<div id=detailsList onClick=openStudioDetails(" + studio.properties.id + ")>Details</div>";
+  studioListHTML += "<hr/>\n";
+});
+
+studioList = studioListHTML;
+
 /////////////////////////////////////////////////////////////////////////////
 // Open site content by displaying the respective blocks
 function openContent() {
@@ -168,6 +223,30 @@ function closeContent() {
   $("#content").css("display","none");
   $("#overlay").css("display","none");
 }
+
+// Open site content by displaying the respective blocks
+function openListContent() {
+  $("#sidebar2").css("display","block");
+};
+
+// Close site content by hiding the respective blocks
+function closeListContent() {
+  $("#sidebar2").css("display","none");
+}
+
+//function to display sidebar with list of murals
+$("#murals").click(function(){
+  openListContent();
+  $("#sidebar2").html(muralList);
+  $("#closeList").click(function() { closeListContent(); });
+});
+
+//function to display sidebar with list of studios
+$("#studios").click(function(){
+  openListContent();
+  $("#sidebar2").html(studioList);
+  $("#closeList").click(function() { closeListContent(); });
+});
 
 /////////////////////////////////////////////////////////////////////////////
 // Begin once map assets are loaded
@@ -232,8 +311,9 @@ map.on('load', function (e) {
 
       // Create a popup, but don't add it to the map yet.
       let popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false,
+        closeButton: true,
+        closeOnClick: true,
+        offset: [0, -10],
       });
 
       // Populate the popup and set its coordinates
@@ -256,8 +336,9 @@ map.on('load', function (e) {
 
       // Create a popup, but don't add it to the map yet.
       let popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false,
+        closeButton: true,
+        closeOnClick: true,
+        offset: [0, -10],
       });
 
       // Populate the popup and set its coordinates
@@ -344,3 +425,49 @@ $("#virtualtours").click(function(){
     zoom: 12.8 // starting zoom
   })
 });
+
+//from sidebar2 - function to pan map to supplied coordinates, trigger popup
+function panMap(lat,lng, name)
+{
+  map.flyTo({
+    center: [lng, lat], // pan position [lng, lat]
+  })
+  //remove any existing popups
+  $('.mapboxgl-popup').remove();
+  //create new one
+  let popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        offset: [0, -10],
+  });
+  popup
+    .setLngLat([lng,lat])
+    .setHTML(name)
+    .addTo(map);
+};
+
+//from sidebar2 - functions to open site details
+function openMuralDetails(siteId)
+{
+    openContent();
+    $("#sidebar").html(muralContent[siteId]);
+    $("#content").html(muralImage[siteId]);
+    $("#close").click(function() { closeContent(); });
+    $("#content").click(function() { closeContent(); });
+    $("#featureimage").click(function(e) {
+      window.open(muralContentPath[siteId] + "fullsize.jpg","_blank");
+      e.stopPropagation();
+    });
+}
+function openStudioDetails(siteId)
+{
+    openContent();
+    $("#sidebar").html(studioContent[siteId]);
+    $("#content").html(studioImage[siteId]);
+    $("#close").click(function() { closeContent(); });
+    $("#content").click(function() { closeContent(); });
+    $("#featureimage").click(function(e) {
+      window.open(studioContentPath[siteId] + "fullsize.jpg","_blank");
+      e.stopPropagation();
+    });
+}

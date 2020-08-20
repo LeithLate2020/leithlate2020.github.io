@@ -72,21 +72,39 @@ body {
   background-color: #e7e7e7;
   width: 33%;
   height: 100%;
-  z-index: 2;
+  z-index: 3;
   padding: 2% 2% 2% 2%;
   border: 2px solid black;
   overflow-y: auto;
 }
 
+#sidebar2 {
+  display: none;
+  background-color: #e7e7e7;
+  width: 33%;
+  height: 100%;
+  z-index: 2;
+  padding: 2% 2% 2% 2%;
+  border: 2px solid black;
+  overflow-y: auto;
+  position: fixed;
+  right: 0px;
+}
+
 @media only screen and (max-width: 600px) 
 {
-  #sidebar {display: none; background-color: #e7e7e7; width: 100%; height: 100%; z-index: 2; padding: 2% 2% 2% 2%; border: 2px solid black; overflow-y: auto;}
+  #sidebar {display: none; background-color: #e7e7e7; width: 100%; height: 100%; z-index: 3; padding: 2% 2% 2% 2%; border: 2px solid black; overflow-y: auto;}
+}
+
+@media only screen and (max-width: 600px) 
+{
+  #sidebar2 {display: none; background-color: #e7e7e7; width: 100%; height: 33%; /* position: absolute;*/ /*top: 370px;*/ bottom: 0px; z-index: 2; padding: 2% 2% 2% 2%; border: 2px solid black; overflow-y: auto;}
 }
 
 #content {
   width: 67%;
   height: 100%;
-  z-index: 2;
+  z-index: 3;
   display: none;
   /* Bug on feature images with portrait ratios: */
   /* Changing this property modifies the bug */
@@ -101,7 +119,7 @@ body {
 
 @media only screen and (max-width: 600px) 
 {
-  #content { width: 100%; height: 67%; z-index: 2; display: none;}
+  #content { width: 100%; height: 67%; z-index: 3; display: none;}
 }
 
 #lllogo {
@@ -144,6 +162,21 @@ body {
   z-index: 5;
   padding: 1% 1% 1% 1%;
   cursor: pointer;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  opacity: 0.5;
+}
+
+#closeList {
+  float: right;
+  z-index: 5;
+  padding: 1% 1% 1% 1%;
+  cursor: pointer;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  opacity: 0.5;
 }
 
 #sitename {
@@ -184,6 +217,18 @@ audio, video {
   cursor: pointer;
 }
 
+/*make studios text look 'active' (list sidebar function)*/
+#studios
+{
+  cursor: pointer;
+}
+
+/*make murals text look 'active' (list sidebar function)*/
+#murals
+{
+  cursor: pointer;
+}
+
 /* map legend - not used*/
 .map-overlay {
   position: absolute;
@@ -195,4 +240,31 @@ audio, video {
 #streetview
 {
   text-align: center;
+}
+
+#sitenameList {
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  float: left;
+  padding-bottom: 10px;
+  width: 80%;
+}
+
+#sitenameList > img {
+  height: 1em;
+}
+
+#detailsList
+{
+  cursor: pointer;
+  float: right;
+  padding-bottom: 10px;
+  width: 20%;
+  padding-left: 10px;
+}
+
+#sidebar2 > hr
+{
+  clear: both;
 }
