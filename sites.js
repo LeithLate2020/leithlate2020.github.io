@@ -141,8 +141,8 @@ muralData.features.forEach(function(mural, index)
     muralListHTML += "<img src='" + muralPastIconFile + "'>&nbsp;";
   }
   muralListHTML += mural.properties.name + "</div>\n";
-  muralListHTML += "<div id=detailsList onClick=openMuralDetails(" + mural.properties.id + ")>Details</div>";
-  muralListHTML += "<hr/>\n";
+  muralListHTML += "<div id=detailsList onClick=openMuralDetails(" + mural.properties.id + ")>Details</div>\n";
+  //muralListHTML += "<hr/>\n";
 });
 
 muralList = muralListHTML;
@@ -203,8 +203,8 @@ studioData.features.forEach(function(studio, index)
   studioListHTML += ")>";
   studioListHTML += "<img src='" + studioIconFile + "'>&nbsp";
   studioListHTML += studio.properties.name + "</div>\n";
-  studioListHTML += "<div id=detailsList onClick=openStudioDetails(" + studio.properties.id + ")>Details</div>";
-  studioListHTML += "<hr/>\n";
+  studioListHTML += "<div id=detailsList onClick=openStudioDetails(" + studio.properties.id + ")>Details</div>\n";
+  //studioListHTML += "<hr/>\n";
 });
 
 studioList = studioListHTML;
