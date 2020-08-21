@@ -264,6 +264,11 @@ audio, video {
   padding-left: 10px;
 }
 
+#detailsPopup
+{
+  cursor: pointer;
+}
+
 #sidebar2 > hr
 {
   clear: both;

@@ -127,7 +127,7 @@ muralData.features.forEach(function(mural, index)
 {
   //Build the HTML raw for jQuery performance reasons
   let muralHTMLName = mural.properties.name.replace(/ /g, "&nbsp;");
-  muralListHTML += "<div id=sitenameList onclick=panMap(" + mural.geometry.coordinates[1] + "," + mural.geometry.coordinates[0] + ",";
+  muralListHTML += "<div id=sitenameList onclick=panMapMural(" + mural.geometry.coordinates[1] + "," + mural.geometry.coordinates[0] + "," + mural.properties.id + ",";
   muralListHTML += "'";
   muralListHTML += muralHTMLName;
   muralListHTML += "'";
@@ -196,7 +196,7 @@ studioData.features.forEach(function(studio, index)
 {
   // Build the HTML raw for jQuery performance reasons
   let studioHTMLName = studio.properties.name.replace(/ /g, "&nbsp;");
-  studioListHTML += "<div id=sitenameList onclick=panMap(" + studio.geometry.coordinates[1] + "," + studio.geometry.coordinates[0] + ",";
+  studioListHTML += "<div id=sitenameList onclick=panMapStudio(" + studio.geometry.coordinates[1] + "," + studio.geometry.coordinates[0] + "," + studio.properties.id + ",";
   studioListHTML += "'";
   studioListHTML += studioHTMLName;
   studioListHTML += "'";
@@ -426,8 +426,27 @@ $("#virtualtours").click(function(){
   })
 });
 
-//from sidebar2 - function to pan map to supplied coordinates, trigger popup
-function panMap(lat,lng, name)
+//from sidebar2 - functions to pan map to supplied coordinates, trigger popup
+function panMapMural(lat,lng, id, name)
+{
+  let popupHTML = "<div id=detailsPopup onClick=openMuralDetails(" + id + ")>" + name + "</div>";
+  map.flyTo({
+    center: [lng, lat], // pan position [lng, lat]
+  })
+  //remove any existing popups
+  $('.mapboxgl-popup').remove();
+  //create new one
+  let popup = new mapboxgl.Popup({
+        closeButton: true,
+        closeOnClick: true,
+        offset: [0, -10],
+  });
+  popup
+    .setLngLat([lng,lat])
+    .setHTML(popupHTML)
+    .addTo(map);
+};
+function panMapStudio(lat,lng, id, name)
 {
   map.flyTo({
     center: [lng, lat], // pan position [lng, lat]
@@ -442,7 +461,7 @@ function panMap(lat,lng, name)
   });
   popup
     .setLngLat([lng,lat])
-    .setHTML(name)
+    .setHTML("<div id=detailsPopup onClick=openStudioDetails(" + id + ")>" + name + "</div>")
     .addTo(map);
 };
 
