@@ -121,7 +121,8 @@ muralData.features.forEach(function(mural, index){
 // Build up complete sidebar content in listHTML
 let muralListHTML;
 
-muralListHTML = "<div id='closeList'><img src='icons/cancel_s.png' width='32'></div><br/><br/><br/>\n";
+muralListHTML = "<div id='muralLegend'>" + "<img src='" + muralIconFile + "'>&nbsp;Existing<br/>" + "<img src='" + muralPastIconFile + "'>&nbsp;No longer existing<br/></div>\n";
+muralListHTML += "<div id='closeList'><img src='icons/cancel_s.png' width='32'></div><br/><br/><br/>\n";
 
 muralData.features.forEach(function(mural, index)
 {

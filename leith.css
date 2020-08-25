@@ -179,6 +179,16 @@ body {
   opacity: 0.5;
 }
 
+#muralLegend {
+  float: left;
+  text-align: left;
+  padding: 1% 1% 1% 1%;
+}
+
+#muralLegend > img {
+  height: 1em;
+}
+
 #sitename {
   font-weight: 700;
   text-align: center;
