@@ -1,9 +1,21 @@
-# muraldemo
-Prototype for Leith Art Map with Mapbox platform
+# LeithLate Virtual Tours Application
+
 
 ## Updating the content
 
+To edit the content of the Virtual Tours application you require a GitHub account with access to the repository at:
+
+https://github.com/LeithLate2020/leithlate2020.github.io
+
+To edit a file, go to this URL and click on the 'Sign in' option at the top right of the page and enter your GitHub account details.
+
+This will show a list of folders and files that contain the data for the application in much the same way as for a Windows File Explorer.
+
 The content for each map feature (a mural or a studio) is held in two places: media in a folder, and information in a GeoJSON file.
+
+Click on the filename to be edited in the list of files in the repository and this will take you to a page showing the content of the file with options for managing the file.
+
+To edit the file click on the editing option ('pencil' icon) at the top right of the page. Make changes in the editing window and click on the green 'Commit changes' button at the bottom of the page.
 
 ### Media
 
