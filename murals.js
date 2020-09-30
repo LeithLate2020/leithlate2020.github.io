@@ -288,54 +288,5 @@ var muralData = {
         "coordinates" : [-3.1727936,55.9549236],
       }
     },
-{
-  "type" : "Feature",
-  "properties" : {
-    "name" : "Eddie's test site",
-    "folder" : "EddieTest",
-    "artist" : "Blameless Collective",
-    "year" : "2013",
-    "description" :
-      "<p>The Leith Aquatic was the first mural fundraised for and commissioned by LeithLate, as part of The Mural Project in 2013. It was produced by Blameless Collective through local community consultation and was also the first large-scale mural to be installed in Leith for almost three decades, kickstarting a new association with public art in the area. The mural launch in July 2013 included a street party for local residents with speeches, DJs and free daal courtesy of Sikh Sanjog.</p><p>Photo: <a href='https://www.eoincareyphoto.com/' target='_blank'>Eoin Carey</a>.</p>",
-    "icon" : "mural",
-    "audio" : [
-      {
-        "file" : "CameronFoster.mp3",
-        "transcript" : "CameronFoster.pdf",
-        "label" : "Cameron Foster Audio Guide",
-      },
-      {
-        "file" : "RabiyaChoudhry.mp3",
-        "transcript" : "RabiyaChoudhry.pdf",
-        "label" : "Rabiya Choudhry on Leith Aquatic Mural",
-      },
-      {
-        "file" : "RichieCumming.mp3",
-        "transcript" : "RichieCumming.pdf",
-        "label" : "Richie Cumming on Leith Aquatic Mural",
-      },
-      {
-        "file" : "FraserGray.mp3",
-        "transcript" : "FraserGray.pdf",
-        "label" : "Fraser Gray on Leith Aquatic Mural",
-      },
-    ],
-    "video" : [
-      {
-        "url" : "https://player.vimeo.com/video/83446593",
-        "label" : "Arts News",
-      },
-      {
-        "url" : "https://player.vimeo.com/video/72727555",
-        "label" : "Cagoule",
-      },
-    ],
-  },
-
-  "geometry" : {
-    "type" : "Point",
-    "coordinates" : [-3.187174,55.965951],
-  }
-},
   ]
 }
